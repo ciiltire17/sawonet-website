@@ -1,0 +1,27 @@
+export const memberNgos = [
+  { id: 1, name: 'OPPD', role: 'Chair' },
+  { id: 2, name: 'URDUN', role: 'Vice Chair' },
+  { id: 3, name: 'ACRED', role: 'Member organization' },
+  { id: 4, name: 'BAYWAN', role: 'Member organization' },
+  { id: 5, name: 'SEEDO', role: 'Member organization' },
+  { id: 6, name: 'DWRO', role: 'Member organization' },
+  { id: 7, name: 'VOSOMWO', role: 'Member organization' },
+  { id: 8, name: 'EEDO', role: 'Member organization' },
+  { id: 9, name: 'DDFO', role: 'Member organization' },
+  { id: 10, name: 'RISE', role: 'Member organization' },
+  { id: 11, name: 'RASMI WASH', role: 'Member organization' },
+  { id: 12, name: 'Somali Central Aid Women', role: 'Member organization' },
+  { id: 13, name: 'SLAC', role: 'Member organization' },
+  { id: 14, name: 'PULPA', role: 'Member organization' },
+  { id: 15, name: 'RIO', role: 'Member organization' },
+  { id: 16, name: 'SAYE', role: 'Member organization' },
+  { id: 17, name: 'YODA', role: 'Member organization' },
+  { id: 18, name: 'SMWC', role: 'Member organization' },
+  {
+    id: 19,
+    name: 'WARO',
+    role: 'Member organization',
+    description:
+      'A community-rooted organization contributing to SAWONET coordination, advocacy, and support for pastoralist women and girls.',
+  },
+];
