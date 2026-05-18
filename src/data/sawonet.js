@@ -168,15 +168,15 @@ export const glfAfrica2026 = {
   ],
   images: {
     main: {
-      src: '/assets/glf-africa-2026/glf-africa-2026-rangelands-speaker.jpg',
+      src: '/assets/glf-africa-2026/fozia-noor-glf-africa-2026-speaking.jpg',
       alt: 'Ms. Fozia Noor speaking with an engaged gesture during a GLF Africa 2026 rangelands discussion',
     },
     panel: {
-      src: '/assets/glf-africa-2026/glf-africa-2026-panel-discussion.jpg',
+      src: '/assets/glf-africa-2026/glf-africa-2026-audience-panel.jpg',
       alt: 'GLF Africa 2026 panel discussion with audience members during the rangelands conference in Nairobi',
     },
     speaker: {
-      src: '/assets/glf-africa-2026/sawonet-director-glf-africa-2026.jpg',
+      src: '/assets/glf-africa-2026/fozia-noor-glf-africa-2026-closeup.jpg',
       alt: 'Close-up of Ms. Fozia Noor speaking during GLF Africa 2026 at CIFOR-ICRAF in Nairobi',
     },
   },
