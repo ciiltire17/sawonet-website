@@ -81,31 +81,37 @@ export default function Home() {
       <section className="bg-slate-50 py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-            <div className="grid gap-4 sm:grid-cols-[1fr_0.72fr]">
-              <img
-                src={glfAfrica2026.images.main.src}
-                alt={glfAfrica2026.images.main.alt}
-                className="h-[460px] w-full rounded-lg object-cover object-center shadow-soft sm:row-span-2 sm:h-full lg:min-h-[650px]"
-                height="2400"
-                width="1600"
-              />
-              <div className="grid gap-4 sm:grid-rows-2">
+            <div className="grid gap-4">
+              <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-soft">
                 <img
-                  src={glfAfrica2026.images.panel.src}
-                  alt={glfAfrica2026.images.panel.alt}
-                  className="h-52 w-full rounded-lg object-cover object-center shadow-soft sm:h-full"
+                  src={glfAfrica2026.images.main.src}
+                  alt={glfAfrica2026.images.main.alt}
+                  className="aspect-[4/3] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03] sm:aspect-[16/10]"
                   height="1200"
-                  loading="lazy"
                   width="1800"
                 />
-                <img
-                  src={glfAfrica2026.images.speaker.src}
-                  alt={glfAfrica2026.images.speaker.alt}
-                  className="h-52 w-full rounded-lg object-cover object-center shadow-soft sm:h-full"
-                  height="1200"
-                  loading="lazy"
-                  width="1800"
-                />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-soft">
+                  <img
+                    src={glfAfrica2026.images.panel.src}
+                    alt={glfAfrica2026.images.panel.alt}
+                    className="aspect-[16/9] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.04] sm:aspect-[4/3]"
+                    height="1200"
+                    loading="lazy"
+                    width="1800"
+                  />
+                </div>
+                <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-soft">
+                  <img
+                    src={glfAfrica2026.images.speaker.src}
+                    alt={glfAfrica2026.images.speaker.alt}
+                    className="aspect-[16/9] w-full object-cover object-[50%_28%] transition duration-500 ease-out group-hover:scale-[1.04] sm:aspect-[4/3]"
+                    height="2400"
+                    loading="lazy"
+                    width="1600"
+                  />
+                </div>
               </div>
             </div>
             <div>

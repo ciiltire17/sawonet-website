@@ -168,16 +168,16 @@ export const glfAfrica2026 = {
   ],
   images: {
     main: {
-      src: '/assets/glf-africa-2026/sawonet-director-glf-africa-2026.jpg',
-      alt: 'SAWONET Director speaking during a GLF Africa 2026 rangelands panel at CIFOR-ICRAF in Nairobi',
+      src: '/assets/glf-africa-2026/glf-africa-2026-rangelands-speaker.jpg',
+      alt: 'SAWONET Director speaking with an engaged gesture during a GLF Africa 2026 rangelands discussion',
     },
     panel: {
       src: '/assets/glf-africa-2026/glf-africa-2026-panel-discussion.jpg',
       alt: 'GLF Africa 2026 panel discussion on rangelands, pastoralist rights, and land stewardship',
     },
     speaker: {
-      src: '/assets/glf-africa-2026/glf-africa-2026-rangelands-speaker.jpg',
-      alt: 'SAWONET Director speaking during a seated GLF Africa 2026 rangelands discussion',
+      src: '/assets/glf-africa-2026/sawonet-director-glf-africa-2026.jpg',
+      alt: 'Close-up of the SAWONET Director speaking during GLF Africa 2026 at CIFOR-ICRAF in Nairobi',
     },
   },
 };

@@ -20,15 +20,17 @@ export default function Projects() {
             id="glf-africa-2026"
             className="mb-10 overflow-hidden rounded-lg border border-sawonet-green/20 bg-white shadow-soft"
           >
-            <div className="grid lg:grid-cols-[0.86fr_1.14fr]">
-              <img
-                src={glfAfrica2026.images.panel.src}
-                alt={glfAfrica2026.images.panel.alt}
-                className="h-80 w-full object-cover object-center sm:h-[34rem] lg:h-full"
-                height="1200"
-                loading="lazy"
-                width="1800"
-              />
+            <div className="grid lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+              <div className="group overflow-hidden bg-slate-100">
+                <img
+                  src={glfAfrica2026.images.main.src}
+                  alt={glfAfrica2026.images.main.alt}
+                  className="h-80 w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03] sm:h-[34rem] lg:h-[42rem]"
+                  height="1200"
+                  loading="lazy"
+                  width="1800"
+                />
+              </div>
               <div className="p-6 sm:p-8">
                 <p className="inline-flex rounded-full bg-sawonet-mint px-4 py-2 text-sm font-semibold uppercase tracking-wide text-sawonet-green">
                   GLF Africa 2026 | {glfAfrica2026.dates}
@@ -69,22 +71,26 @@ export default function Projects() {
                   {glfAfrica2026.outcome}
                 </p>
                 <div className="mt-7 grid gap-4 sm:grid-cols-2">
-                  <img
-                    src={glfAfrica2026.images.main.src}
-                    alt={glfAfrica2026.images.main.alt}
-                    className="h-56 w-full rounded-lg object-cover object-center"
-                    height="2400"
-                    loading="lazy"
-                    width="1600"
-                  />
-                  <img
-                    src={glfAfrica2026.images.speaker.src}
-                    alt={glfAfrica2026.images.speaker.alt}
-                    className="h-56 w-full rounded-lg object-cover object-center"
-                    height="1200"
-                    loading="lazy"
-                    width="1800"
-                  />
+                  <div className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+                    <img
+                      src={glfAfrica2026.images.panel.src}
+                      alt={glfAfrica2026.images.panel.alt}
+                      className="aspect-[4/3] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.04]"
+                      height="1200"
+                      loading="lazy"
+                      width="1800"
+                    />
+                  </div>
+                  <div className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+                    <img
+                      src={glfAfrica2026.images.speaker.src}
+                      alt={glfAfrica2026.images.speaker.alt}
+                      className="aspect-[4/3] w-full object-cover object-[50%_28%] transition duration-500 ease-out group-hover:scale-[1.04]"
+                      height="2400"
+                      loading="lazy"
+                      width="1600"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
