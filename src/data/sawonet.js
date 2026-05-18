@@ -149,7 +149,7 @@ export const glfAfrica2026 = {
   location: 'Nairobi, Kenya',
   dates: 'May 6-7, 2026',
   description:
-    "SAWONET participated in GLF Africa 2026: Stewarding Our Rangelands, the flagship annual Africa conference of the Global Landscapes Forum hosted by CIFOR-ICRAF in Nairobi, Kenya. SAWONET's Director joined the conference discussions as a speaker, contributing pastoralist women's perspectives to continental dialogue on land use, climate resilience, food security, Indigenous knowledge, pastoralist rights, and sustainable rangeland stewardship.",
+    'SAWONET participated in GLF Africa 2026: Stewarding Our Rangelands, the flagship annual Africa conference of the Global Landscapes Forum hosted by CIFOR-ICRAF in Nairobi, Kenya. SAWONET Convener and OPPD Director Ms. Fozia Noor took the stage with fellow panelists from pastoralist, research, policy, and land governance spaces, contributing pastoralist women\'s perspectives to continental dialogue on land use, climate resilience, food security, Indigenous knowledge, pastoralist rights, and sustainable rangeland stewardship.',
   overview:
     "The 8th edition took place on May 6-7, 2026, during the UN's International Year of Rangelands and Pastoralists. It convened more than 6,000 participants, including over 800 people in Nairobi and more than 5,500 online, to focus on protecting rangelands that support 2 billion livelihoods and store one-third of the world's carbon.",
   outcome:
@@ -161,7 +161,7 @@ export const glfAfrica2026 = {
     { value: '1/3', label: "of the world's carbon stored in rangelands" },
   ],
   highlights: [
-    "SAWONET Director's speaker participation",
+    "Ms. Fozia Noor's speaker participation",
     'Pastoralist rights and inclusive representation',
     'Climate resilience, food security, and land use',
     'Indigenous knowledge integrated with appropriate technology',
@@ -169,7 +169,7 @@ export const glfAfrica2026 = {
   images: {
     main: {
       src: '/assets/glf-africa-2026/glf-africa-2026-rangelands-speaker.jpg',
-      alt: 'SAWONET Director speaking with an engaged gesture during a GLF Africa 2026 rangelands discussion',
+      alt: 'Ms. Fozia Noor speaking with an engaged gesture during a GLF Africa 2026 rangelands discussion',
     },
     panel: {
       src: '/assets/glf-africa-2026/glf-africa-2026-panel-discussion.jpg',
@@ -177,7 +177,7 @@ export const glfAfrica2026 = {
     },
     speaker: {
       src: '/assets/glf-africa-2026/sawonet-director-glf-africa-2026.jpg',
-      alt: 'Close-up of the SAWONET Director speaking during GLF Africa 2026 at CIFOR-ICRAF in Nairobi',
+      alt: 'Close-up of Ms. Fozia Noor speaking during GLF Africa 2026 at CIFOR-ICRAF in Nairobi',
     },
   },
 };

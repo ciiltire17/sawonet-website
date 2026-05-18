@@ -125,7 +125,7 @@ export default function Home() {
                 {glfAfrica2026.subtitle}
               </p>
               <p className="mt-4 inline-flex rounded-md bg-sawonet-navy px-4 py-2 text-sm font-semibold text-white">
-                Speaker participation: SAWONET Director
+                Speaker participation: Ms. Fozia Noor
               </p>
               <p className="mt-5 leading-7 text-slate-600">{glfAfrica2026.description}</p>
               <p className="mt-4 leading-7 text-slate-600">{glfAfrica2026.overview}</p>
