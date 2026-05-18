@@ -177,23 +177,9 @@ export const glfAfrica2026 = {
     },
     speaker: {
       src: '/assets/glf-africa-2026/glf-africa-2026-rangelands-speaker.jpg',
-      alt: 'Hybrid GLF Africa 2026 conference session with speakers discussing rangelands',
+      alt: 'SAWONET Director speaking during a seated GLF Africa 2026 rangelands discussion',
     },
   },
-  gallery: [
-    {
-      src: '/assets/glf-africa-2026/glf-africa-2026-hybrid-session.jpg',
-      alt: 'Hybrid GLF Africa 2026 session connecting online and in-person conference participants',
-    },
-    {
-      src: '/assets/glf-africa-2026/glf-africa-2026-conference-stage.jpg',
-      alt: 'GLF Africa 2026 conference stage during discussions on rangelands and pastoralism',
-    },
-    {
-      src: '/assets/glf-africa-2026/glf-africa-2026-virtual-participation.jpg',
-      alt: 'Virtual speaker contribution displayed during GLF Africa 2026 in Nairobi',
-    },
-  ],
 };
 
 export const campaigns = [

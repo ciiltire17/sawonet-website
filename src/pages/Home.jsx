@@ -80,31 +80,31 @@ export default function Home() {
 
       <section className="bg-slate-50 py-16 sm:py-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <div className="grid gap-4 sm:grid-cols-[1fr_0.7fr] lg:grid-cols-1">
+          <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+            <div className="grid gap-4 sm:grid-cols-[1fr_0.72fr]">
               <img
                 src={glfAfrica2026.images.main.src}
                 alt={glfAfrica2026.images.main.alt}
-                className="h-[440px] w-full rounded-lg object-cover object-center shadow-soft sm:h-[520px] lg:h-[620px]"
-                height="1600"
-                width="1200"
+                className="h-[460px] w-full rounded-lg object-cover object-center shadow-soft sm:row-span-2 sm:h-full lg:min-h-[650px]"
+                height="2400"
+                width="1600"
               />
-              <div className="grid gap-4 sm:grid-rows-2 lg:hidden">
+              <div className="grid gap-4 sm:grid-rows-2">
                 <img
                   src={glfAfrica2026.images.panel.src}
                   alt={glfAfrica2026.images.panel.alt}
-                  className="h-48 w-full rounded-lg object-cover object-center shadow-soft sm:h-full"
-                  height="1600"
+                  className="h-52 w-full rounded-lg object-cover object-center shadow-soft sm:h-full"
+                  height="1200"
                   loading="lazy"
-                  width="1200"
+                  width="1800"
                 />
                 <img
                   src={glfAfrica2026.images.speaker.src}
                   alt={glfAfrica2026.images.speaker.alt}
-                  className="h-48 w-full rounded-lg object-cover object-center shadow-soft sm:h-full"
-                  height="1280"
+                  className="h-52 w-full rounded-lg object-cover object-center shadow-soft sm:h-full"
+                  height="1200"
                   loading="lazy"
-                  width="1280"
+                  width="1800"
                 />
               </div>
             </div>
@@ -117,6 +117,9 @@ export default function Home() {
               </h2>
               <p className="mt-2 text-xl font-semibold text-sawonet-gold">
                 {glfAfrica2026.subtitle}
+              </p>
+              <p className="mt-4 inline-flex rounded-md bg-sawonet-navy px-4 py-2 text-sm font-semibold text-white">
+                Speaker participation: SAWONET Director
               </p>
               <p className="mt-5 leading-7 text-slate-600">{glfAfrica2026.description}</p>
               <p className="mt-4 leading-7 text-slate-600">{glfAfrica2026.overview}</p>
