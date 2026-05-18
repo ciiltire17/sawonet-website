@@ -6,6 +6,7 @@ import SectionHeader from '../components/SectionHeader.jsx';
 import { memberNgos } from '../data/memberNgos.js';
 import {
   campaigns,
+  glfAfrica2026,
   impactStats,
   organization,
   partners,
@@ -72,6 +73,50 @@ export default function Home() {
                   {organization.coverage.join(', ')}
                 </p>
               </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-soft">
+              <img
+                src={glfAfrica2026.images.main.src}
+                alt={glfAfrica2026.images.main.alt}
+                className="h-[420px] w-full object-cover object-center sm:h-[520px] lg:h-[620px]"
+                height="2100"
+                width="1400"
+              />
+            </div>
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-sawonet-green">
+                GLF Africa 2026
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-sawonet-navy sm:text-4xl">
+                {glfAfrica2026.title}
+              </h2>
+              <p className="mt-2 text-xl font-semibold text-sawonet-gold">
+                {glfAfrica2026.subtitle}
+              </p>
+              <p className="mt-5 leading-7 text-slate-600">{glfAfrica2026.description}</p>
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {glfAfrica2026.highlights.map((highlight) => (
+                  <div
+                    key={highlight}
+                    className="rounded-lg border border-sawonet-green/20 bg-sawonet-mint px-4 py-3 font-semibold text-sawonet-navy"
+                  >
+                    {highlight}
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/projects#glf-africa-2026"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-sawonet-green px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-green-700"
+              >
+                Read More <Icon name="arrowRight" size={18} />
+              </Link>
             </div>
           </div>
         </Container>

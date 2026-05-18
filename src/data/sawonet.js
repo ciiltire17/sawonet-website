@@ -142,6 +142,35 @@ export const partners = [
   },
 ];
 
+export const glfAfrica2026 = {
+  slug: 'glf-africa-2026',
+  title: 'SAWONET at GLF Africa 2026',
+  subtitle: 'Stewarding Our Rangelands',
+  location: 'Nairobi, Kenya',
+  description:
+    'SAWONET participated in GLF Africa 2026 in Nairobi, Kenya, contributing to continental conversations on pastoralist resilience, women-led leadership, Indigenous knowledge systems, and sustainable rangeland stewardship. The event highlighted the critical role of pastoralist communities in protecting ecosystems, strengthening food systems, and shaping inclusive climate policies.',
+  highlights: [
+    'Women-led pastoralist leadership',
+    'Climate resilience and rangeland stewardship',
+    'Indigenous knowledge and sustainable land governance',
+    'Pastoralist rights, representation, and inclusion',
+  ],
+  images: {
+    main: {
+      src: '/assets/glf-africa-2026/sawonet-director-glf-africa-2026.jpg',
+      alt: 'SAWONET representative speaking during GLF Africa 2026 at CIFOR-ICRAF in Nairobi, Kenya',
+    },
+    panel: {
+      src: '/assets/glf-africa-2026/glf-africa-2026-panel-discussion.jpg',
+      alt: 'Panel discussion at GLF Africa 2026 on rangelands and pastoralist resilience',
+    },
+    speaker: {
+      src: '/assets/glf-africa-2026/glf-africa-2026-rangelands-speaker.jpg',
+      alt: 'Speaker contributing to a GLF Africa 2026 rangelands discussion',
+    },
+  },
+};
+
 export const campaigns = [
   {
     title: 'Ending Early & Forced Child Marriage',

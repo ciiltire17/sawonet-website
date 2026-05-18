@@ -6,6 +6,20 @@ function currentPath() {
   return window.location.pathname || '/';
 }
 
+function scrollToHash(hash) {
+  if (!hash) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    const target = document.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+}
+
 export function BrowserRouter({ children }) {
   const [path, setPath] = useState(currentPath);
 
@@ -19,10 +33,13 @@ export function BrowserRouter({ children }) {
     () => ({
       path,
       navigate(to) {
-        if (to === path) return;
+        const target = new URL(to, window.location.origin);
+        const nextPath = target.pathname || '/';
+        const nextHash = target.hash;
+        if (nextPath === path && nextHash === window.location.hash) return;
         window.history.pushState({}, '', to);
         setPath(currentPath());
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollToHash(nextHash);
       },
     }),
     [path]
