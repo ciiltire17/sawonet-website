@@ -147,28 +147,53 @@ export const glfAfrica2026 = {
   title: 'SAWONET at GLF Africa 2026',
   subtitle: 'Stewarding Our Rangelands',
   location: 'Nairobi, Kenya',
+  dates: 'May 6-7, 2026',
   description:
-    'SAWONET participated in GLF Africa 2026 in Nairobi, Kenya, contributing to continental conversations on pastoralist resilience, women-led leadership, Indigenous knowledge systems, and sustainable rangeland stewardship. The event highlighted the critical role of pastoralist communities in protecting ecosystems, strengthening food systems, and shaping inclusive climate policies.',
+    "SAWONET participated in GLF Africa 2026: Stewarding Our Rangelands, the flagship annual Africa conference of the Global Landscapes Forum hosted by CIFOR-ICRAF in Nairobi, Kenya. SAWONET's Director joined the conference discussions as a speaker, contributing pastoralist women's perspectives to continental dialogue on land use, climate resilience, food security, Indigenous knowledge, pastoralist rights, and sustainable rangeland stewardship.",
+  overview:
+    "The 8th edition took place on May 6-7, 2026, during the UN's International Year of Rangelands and Pastoralists. It convened more than 6,000 participants, including over 800 people in Nairobi and more than 5,500 online, to focus on protecting rangelands that support 2 billion livelihoods and store one-third of the world's carbon.",
+  outcome:
+    'Key outcomes included calls to shift global financing and policy so pastoralist rights are recognized, rangelands are valued as vital ecosystems, and Indigenous knowledge is integrated with appropriate modern technology.',
+  stats: [
+    { value: 'May 6-7', label: '2026 conference dates' },
+    { value: '6,000+', label: 'participants in person and online' },
+    { value: '2B', label: 'livelihoods supported by rangelands' },
+    { value: '1/3', label: "of the world's carbon stored in rangelands" },
+  ],
   highlights: [
-    'Women-led pastoralist leadership',
-    'Climate resilience and rangeland stewardship',
-    'Indigenous knowledge and sustainable land governance',
-    'Pastoralist rights, representation, and inclusion',
+    "SAWONET Director's speaker participation",
+    'Pastoralist rights and inclusive representation',
+    'Climate resilience, food security, and land use',
+    'Indigenous knowledge integrated with appropriate technology',
   ],
   images: {
     main: {
       src: '/assets/glf-africa-2026/sawonet-director-glf-africa-2026.jpg',
-      alt: 'SAWONET representative speaking during GLF Africa 2026 at CIFOR-ICRAF in Nairobi, Kenya',
+      alt: 'SAWONET Director speaking during a GLF Africa 2026 rangelands panel at CIFOR-ICRAF in Nairobi',
     },
     panel: {
       src: '/assets/glf-africa-2026/glf-africa-2026-panel-discussion.jpg',
-      alt: 'Panel discussion at GLF Africa 2026 on rangelands and pastoralist resilience',
+      alt: 'GLF Africa 2026 panel discussion on rangelands, pastoralist rights, and land stewardship',
     },
     speaker: {
       src: '/assets/glf-africa-2026/glf-africa-2026-rangelands-speaker.jpg',
-      alt: 'Speaker contributing to a GLF Africa 2026 rangelands discussion',
+      alt: 'Hybrid GLF Africa 2026 conference session with speakers discussing rangelands',
     },
   },
+  gallery: [
+    {
+      src: '/assets/glf-africa-2026/glf-africa-2026-hybrid-session.jpg',
+      alt: 'Hybrid GLF Africa 2026 session connecting online and in-person conference participants',
+    },
+    {
+      src: '/assets/glf-africa-2026/glf-africa-2026-conference-stage.jpg',
+      alt: 'GLF Africa 2026 conference stage during discussions on rangelands and pastoralism',
+    },
+    {
+      src: '/assets/glf-africa-2026/glf-africa-2026-virtual-participation.jpg',
+      alt: 'Virtual speaker contribution displayed during GLF Africa 2026 in Nairobi',
+    },
+  ],
 };
 
 export const campaigns = [

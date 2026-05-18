@@ -10,7 +10,7 @@ export default function Projects() {
       <PageHero
         eyebrow="Projects / Campaigns"
         title="Campaigns and partnerships advancing protection and resilience"
-        description="SAWONET's current priorities include ending early and forced child marriage, strengthening climate adaptation for pastoralist women, and participating in rangelands dialogue such as GLF Africa 2026."
+        description="SAWONET's current priorities include ending early and forced child marriage, strengthening climate adaptation for pastoralist women, and contributing to rangelands dialogue through GLF Africa 2026."
         image
       />
 
@@ -20,18 +20,18 @@ export default function Projects() {
             id="glf-africa-2026"
             className="mb-10 overflow-hidden rounded-lg border border-sawonet-green/20 bg-white shadow-soft"
           >
-            <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="grid lg:grid-cols-[0.86fr_1.14fr]">
               <img
                 src={glfAfrica2026.images.panel.src}
                 alt={glfAfrica2026.images.panel.alt}
-                className="h-72 w-full object-cover sm:h-96 lg:h-full"
-                height="933"
+                className="h-80 w-full object-cover object-center sm:h-[34rem] lg:h-full"
+                height="1600"
                 loading="lazy"
-                width="1400"
+                width="1200"
               />
               <div className="p-6 sm:p-8">
-                <p className="text-sm font-semibold uppercase tracking-wide text-sawonet-green">
-                  GLF Africa 2026
+                <p className="inline-flex rounded-full bg-sawonet-mint px-4 py-2 text-sm font-semibold uppercase tracking-wide text-sawonet-green">
+                  GLF Africa 2026 | {glfAfrica2026.dates}
                 </p>
                 <h2 className="mt-3 text-3xl font-bold text-sawonet-navy">
                   {glfAfrica2026.title}
@@ -40,33 +40,59 @@ export default function Projects() {
                   {glfAfrica2026.subtitle}
                 </p>
                 <p className="mt-5 leading-7 text-slate-600">{glfAfrica2026.description}</p>
+                <p className="mt-4 leading-7 text-slate-600">{glfAfrica2026.overview}</p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {glfAfrica2026.stats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
+                    >
+                      <p className="text-2xl font-bold text-sawonet-navy">{stat.value}</p>
+                      <p className="mt-1 text-sm leading-5 text-slate-600">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
                 <ul className="mt-6 grid gap-3 text-slate-700 sm:grid-cols-2">
                   {glfAfrica2026.highlights.map((highlight) => (
                     <li
                       key={highlight}
-                      className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 font-semibold"
+                      className="rounded-lg border border-sawonet-green/20 bg-sawonet-mint px-4 py-3 font-semibold"
                     >
                       {highlight}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                <p className="mt-6 rounded-lg border border-sawonet-gold/30 bg-sawonet-sand px-5 py-4 leading-7 text-sawonet-navy">
+                  {glfAfrica2026.outcome}
+                </p>
+                <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   <img
                     src={glfAfrica2026.images.main.src}
                     alt={glfAfrica2026.images.main.alt}
                     className="h-56 w-full rounded-lg object-cover object-center"
-                    height="2100"
+                    height="1600"
                     loading="lazy"
-                    width="1400"
+                    width="1200"
                   />
                   <img
                     src={glfAfrica2026.images.speaker.src}
                     alt={glfAfrica2026.images.speaker.alt}
                     className="h-56 w-full rounded-lg object-cover object-center"
-                    height="933"
+                    height="1280"
                     loading="lazy"
-                    width="1400"
+                    width="1280"
                   />
+                  {glfAfrica2026.gallery.map((image) => (
+                    <img
+                      key={image.src}
+                      src={image.src}
+                      alt={image.alt}
+                      className="h-56 w-full rounded-lg object-cover object-center"
+                      height="1280"
+                      loading="lazy"
+                      width="1280"
+                    />
+                  ))}
                 </div>
               </div>
             </div>

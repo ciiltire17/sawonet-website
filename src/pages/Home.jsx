@@ -78,21 +78,39 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-slate-50 py-16 sm:py-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-soft">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div className="grid gap-4 sm:grid-cols-[1fr_0.7fr] lg:grid-cols-1">
               <img
                 src={glfAfrica2026.images.main.src}
                 alt={glfAfrica2026.images.main.alt}
-                className="h-[420px] w-full object-cover object-center sm:h-[520px] lg:h-[620px]"
-                height="2100"
-                width="1400"
+                className="h-[440px] w-full rounded-lg object-cover object-center shadow-soft sm:h-[520px] lg:h-[620px]"
+                height="1600"
+                width="1200"
               />
+              <div className="grid gap-4 sm:grid-rows-2 lg:hidden">
+                <img
+                  src={glfAfrica2026.images.panel.src}
+                  alt={glfAfrica2026.images.panel.alt}
+                  className="h-48 w-full rounded-lg object-cover object-center shadow-soft sm:h-full"
+                  height="1600"
+                  loading="lazy"
+                  width="1200"
+                />
+                <img
+                  src={glfAfrica2026.images.speaker.src}
+                  alt={glfAfrica2026.images.speaker.alt}
+                  className="h-48 w-full rounded-lg object-cover object-center shadow-soft sm:h-full"
+                  height="1280"
+                  loading="lazy"
+                  width="1280"
+                />
+              </div>
             </div>
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-sawonet-green">
-                GLF Africa 2026
+              <p className="mb-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold uppercase tracking-wide text-sawonet-green shadow-sm ring-1 ring-sawonet-green/15">
+                GLF Africa 2026 | {glfAfrica2026.location}
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-sawonet-navy sm:text-4xl">
                 {glfAfrica2026.title}
@@ -101,16 +119,31 @@ export default function Home() {
                 {glfAfrica2026.subtitle}
               </p>
               <p className="mt-5 leading-7 text-slate-600">{glfAfrica2026.description}</p>
+              <p className="mt-4 leading-7 text-slate-600">{glfAfrica2026.overview}</p>
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {glfAfrica2026.stats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-lg border border-white bg-white p-4 shadow-sm"
+                  >
+                    <p className="text-2xl font-bold text-sawonet-navy">{stat.value}</p>
+                    <p className="mt-1 text-sm leading-5 text-slate-600">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 {glfAfrica2026.highlights.map((highlight) => (
                   <div
                     key={highlight}
-                    className="rounded-lg border border-sawonet-green/20 bg-sawonet-mint px-4 py-3 font-semibold text-sawonet-navy"
+                    className="rounded-lg border border-sawonet-green/20 bg-sawonet-mint px-4 py-3 text-sm font-semibold leading-6 text-sawonet-navy"
                   >
                     {highlight}
                   </div>
                 ))}
               </div>
+              <p className="mt-6 rounded-lg border border-sawonet-gold/30 bg-white px-5 py-4 leading-7 text-slate-700 shadow-sm">
+                {glfAfrica2026.outcome}
+              </p>
               <Link
                 to="/projects#glf-africa-2026"
                 className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-sawonet-green px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-green-700"
