@@ -173,7 +173,7 @@ export const glfAfrica2026 = {
     },
     panel: {
       src: '/assets/glf-africa-2026/glf-africa-2026-panel-discussion.jpg',
-      alt: 'GLF Africa 2026 panel discussion on rangelands, pastoralist rights, and land stewardship',
+      alt: 'GLF Africa 2026 panel discussion with audience members during the rangelands conference in Nairobi',
     },
     speaker: {
       src: '/assets/glf-africa-2026/sawonet-director-glf-africa-2026.jpg',
