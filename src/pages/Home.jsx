@@ -7,6 +7,7 @@ import { memberNgos } from '../data/memberNgos.js';
 import {
   campaigns,
   glfAfrica2026,
+  globalGatheringPastoralistWomen,
   impactStats,
   organization,
   partners,
@@ -72,6 +73,92 @@ export default function Home() {
                 <p className="mt-3 font-semibold leading-7 text-sawonet-navy">
                   {organization.coverage.join(', ')}
                 </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <p className="mb-4 inline-flex rounded-full bg-sawonet-sand px-4 py-2 text-sm font-semibold uppercase tracking-wide text-sawonet-green ring-1 ring-sawonet-gold/30">
+                Featured update | {globalGatheringPastoralistWomen.location}
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-sawonet-navy sm:text-4xl">
+                {globalGatheringPastoralistWomen.title}
+              </h2>
+              <p className="mt-2 text-xl font-semibold text-sawonet-gold">
+                {globalGatheringPastoralistWomen.subtitle}
+              </p>
+              <p className="mt-4 rounded-md border-l-4 border-sawonet-green bg-sawonet-mint px-5 py-4 font-semibold leading-7 text-sawonet-navy">
+                {globalGatheringPastoralistWomen.theme}
+              </p>
+              <p className="mt-5 leading-7 text-slate-600">
+                {globalGatheringPastoralistWomen.description}
+              </p>
+              <p className="mt-4 leading-7 text-slate-600">
+                {globalGatheringPastoralistWomen.representation}
+              </p>
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {globalGatheringPastoralistWomen.highlights.slice(0, 4).map((highlight) => (
+                  <div
+                    key={highlight}
+                    className="rounded-lg border border-sawonet-green/20 bg-slate-50 px-4 py-3 text-sm font-semibold leading-6 text-sawonet-navy"
+                  >
+                    {highlight}
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/projects#global-gathering-pastoralist-women"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-sawonet-green px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-green-700"
+              >
+                Read More <Icon name="arrowRight" size={18} />
+              </Link>
+            </div>
+            <div className="grid gap-4">
+              <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-soft">
+                <img
+                  src={globalGatheringPastoralistWomen.images.group.src}
+                  alt={globalGatheringPastoralistWomen.images.group.alt}
+                  className="aspect-[16/10] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]"
+                  height="1114"
+                  width="1820"
+                />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-soft">
+                  <img
+                    src={globalGatheringPastoralistWomen.images.opening.src}
+                    alt={globalGatheringPastoralistWomen.images.opening.alt}
+                    className="aspect-[4/3] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.04]"
+                    height="960"
+                    loading="lazy"
+                    width="1280"
+                  />
+                </div>
+                <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-soft">
+                  <img
+                    src={globalGatheringPastoralistWomen.images.discussion.src}
+                    alt={globalGatheringPastoralistWomen.images.discussion.alt}
+                    className="aspect-[4/3] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.04]"
+                    height="1280"
+                    loading="lazy"
+                    width="1280"
+                  />
+                </div>
+                <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-soft">
+                  <img
+                    src={globalGatheringPastoralistWomen.images.declaration.src}
+                    alt={globalGatheringPastoralistWomen.images.declaration.alt}
+                    className="aspect-[4/3] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.04]"
+                    height="810"
+                    loading="lazy"
+                    width="1080"
+                  />
+                </div>
               </div>
             </div>
           </div>

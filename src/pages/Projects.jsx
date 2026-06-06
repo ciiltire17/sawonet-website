@@ -2,7 +2,7 @@ import Card from '../components/Card.jsx';
 import Container from '../components/Container.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
-import { campaigns, glfAfrica2026 } from '../data/sawonet.js';
+import { campaigns, glfAfrica2026, globalGatheringPastoralistWomen } from '../data/sawonet.js';
 
 export default function Projects() {
   return (
@@ -10,12 +10,100 @@ export default function Projects() {
       <PageHero
         eyebrow="Projects / Campaigns"
         title="Campaigns and partnerships advancing protection and resilience"
-        description="SAWONET's current priorities include ending early and forced child marriage, strengthening climate adaptation for pastoralist women, and contributing to rangelands dialogue through GLF Africa 2026."
+        description="SAWONET's current priorities include ending early and forced child marriage, strengthening climate adaptation for pastoralist women, and contributing to global rangelands dialogue through GLF Africa 2026 and the Global Gathering of Pastoralist Women."
         image
       />
 
       <section className="py-16 sm:py-20">
         <Container>
+          <article
+            id="global-gathering-pastoralist-women"
+            className="mb-10 overflow-hidden rounded-lg border border-sawonet-gold/30 bg-white shadow-soft"
+          >
+            <div className="grid lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+              <div className="p-6 sm:p-8">
+                <p className="inline-flex rounded-full bg-sawonet-sand px-4 py-2 text-sm font-semibold uppercase tracking-wide text-sawonet-green ring-1 ring-sawonet-gold/30">
+                  Global gathering | {globalGatheringPastoralistWomen.dates}
+                </p>
+                <h2 className="mt-3 text-3xl font-bold text-sawonet-navy">
+                  {globalGatheringPastoralistWomen.title}
+                </h2>
+                <p className="mt-2 text-lg font-semibold text-sawonet-gold">
+                  {globalGatheringPastoralistWomen.subtitle}
+                </p>
+                <p className="mt-5 rounded-md border-l-4 border-sawonet-green bg-sawonet-mint px-5 py-4 font-semibold leading-7 text-sawonet-navy">
+                  {globalGatheringPastoralistWomen.theme}
+                </p>
+                <p className="mt-5 leading-7 text-slate-600">
+                  {globalGatheringPastoralistWomen.description}
+                </p>
+                <p className="mt-4 leading-7 text-slate-600">
+                  {globalGatheringPastoralistWomen.representation}
+                </p>
+                <p className="mt-4 leading-7 text-slate-600">
+                  {globalGatheringPastoralistWomen.overview}
+                </p>
+                <ul className="mt-6 grid gap-3 text-slate-700 sm:grid-cols-2">
+                  {globalGatheringPastoralistWomen.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="rounded-lg border border-sawonet-green/20 bg-slate-50 px-4 py-3 font-semibold leading-6"
+                    >
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 rounded-lg border border-sawonet-gold/30 bg-sawonet-sand px-5 py-4 leading-7 text-sawonet-navy">
+                  {globalGatheringPastoralistWomen.outcome}
+                </p>
+              </div>
+              <div className="grid gap-4 bg-slate-50 p-4 sm:p-6">
+                <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-sm">
+                  <img
+                    src={globalGatheringPastoralistWomen.images.opening.src}
+                    alt={globalGatheringPastoralistWomen.images.opening.alt}
+                    className="aspect-[4/3] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]"
+                    height="960"
+                    loading="lazy"
+                    width="1280"
+                  />
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-sm">
+                    <img
+                      src={globalGatheringPastoralistWomen.images.discussion.src}
+                      alt={globalGatheringPastoralistWomen.images.discussion.alt}
+                      className="aspect-[4/3] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.04]"
+                      height="1280"
+                      loading="lazy"
+                      width="1280"
+                    />
+                  </div>
+                  <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-sm">
+                    <img
+                      src={globalGatheringPastoralistWomen.images.declaration.src}
+                      alt={globalGatheringPastoralistWomen.images.declaration.alt}
+                      className="aspect-[4/3] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.04]"
+                      height="810"
+                      loading="lazy"
+                      width="1080"
+                    />
+                  </div>
+                </div>
+                <div className="group overflow-hidden rounded-lg border border-white bg-white shadow-sm">
+                  <img
+                    src={globalGatheringPastoralistWomen.images.group.src}
+                    alt={globalGatheringPastoralistWomen.images.group.alt}
+                    className="aspect-[16/9] w-full object-cover object-center transition duration-500 ease-out group-hover:scale-[1.03]"
+                    height="1114"
+                    loading="lazy"
+                    width="1820"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+
           <article
             id="glf-africa-2026"
             className="mb-10 overflow-hidden rounded-lg border border-sawonet-green/20 bg-white shadow-soft"

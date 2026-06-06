@@ -182,6 +182,51 @@ export const glfAfrica2026 = {
   },
 };
 
+export const globalGatheringPastoralistWomen = {
+  slug: 'global-gathering-pastoralist-women',
+  title: 'SAWONET at the Global Gathering of Pastoralist Women',
+  subtitle: 'Kathmandu, Nepal | 26-29 May 2026',
+  theme:
+    'Voices from the Rangelands: Pastoralist Women Rising for Land Rights, Climate Justice, Equity, and Peace',
+  location: 'Kathmandu, Nepal',
+  dates: '26-29 May 2026',
+  representatives: 'Fozia and Asma',
+  description:
+    'From 26-29 May 2026, representatives of SAWONET participated in the Global Gathering of Pastoralist Women in Kathmandu, Nepal. The gathering brought together pastoralist women, women-led organizations, researchers, policy actors, and development practitioners from different regions of the world to discuss climate justice, land rights, peacebuilding, gender equality, and the future of pastoral communities.',
+  representation:
+    'SAWONET was represented by Fozia and Asma, helping ensure that the voices, realities, and priorities of Somali pastoralist women were represented on a global platform.',
+  overview:
+    'Sessions and exchanges highlighted the impacts of climate change on pastoralist women, the role of anticipatory action, women-led leadership in land and resource governance, Indigenous knowledge systems, peacebuilding, and collaborative recommendations for the Kathmandu Declaration.',
+  outcome:
+    'The gathering strengthened global solidarity among pastoralist women, informed the development of the Kathmandu Declaration, and reinforced the need to place pastoralist women at the center of climate, development, land rights, and peace agendas.',
+  highlights: [
+    'Climate change and anticipatory action',
+    "Land rights and pastoralist women's leadership",
+    'Indigenous knowledge and resilience',
+    'Peacebuilding and natural resource management',
+    'Development of the Kathmandu Declaration',
+    'Global solidarity among pastoralist women',
+  ],
+  images: {
+    opening: {
+      src: '/assets/global-gathering-pastoralist-women/opening-event-screen.jpg',
+      alt: 'Opening screen for the Global Gathering of Pastoralist Women in Kathmandu, Nepal, 26-29 May 2026',
+    },
+    discussion: {
+      src: '/assets/global-gathering-pastoralist-women/presentation-discussion.jpg',
+      alt: 'Pastoralist women and participants in a presentation and discussion session during the Kathmandu gathering',
+    },
+    declaration: {
+      src: '/assets/global-gathering-pastoralist-women/kathmandu-declaration.jpg',
+      alt: 'Participants on stage during the Kathmandu Declaration session at the Global Gathering of Pastoralist Women',
+    },
+    group: {
+      src: '/assets/global-gathering-pastoralist-women/group-photo.jpg',
+      alt: 'Group photo of Global Gathering of Pastoralist Women participants outside the Kathmandu venue',
+    },
+  },
+};
+
 export const campaigns = [
   {
     title: 'Ending Early & Forced Child Marriage',
