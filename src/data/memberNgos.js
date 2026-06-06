@@ -16,6 +16,19 @@ function pendingMember(id, shortName, role = 'Member Organization') {
   };
 }
 
+const riseTreeDistributionImages = Array.from({ length: 19 }, (_, index) => {
+  const imageNumber = String(index + 1).padStart(2, '0');
+  return {
+    src: `/assets/members/rise-tree-distribution/rise-tree-distribution-${imageNumber}.jpg`,
+    alt:
+      index < 4
+        ? 'RISE staff and community members planting tree seedlings in agricultural land in Berjiroon Village, Baidoa'
+        : index < 9
+          ? 'RISE team members photographed during the tree distribution activity in Baidoa'
+          : 'RISE team members supporting agroforestry and field activities with vulnerable agricultural households in Baidoa',
+  };
+});
+
 export const memberNgos = [
   {
     id: 'oppd',
@@ -45,7 +58,41 @@ export const memberNgos = [
   pendingMember('vosomwo', 'VOSOMWO'),
   pendingMember('eedo', 'EEDO'),
   pendingMember('ddfo', 'DDFO'),
-  pendingMember('rise', 'RISE'),
+  {
+    id: 'rise',
+    shortName: 'RISE',
+    name: 'Resilience Integration and Sustainable Empowerment',
+    role: 'Member Organization',
+    region: 'South West State, Somalia',
+    description:
+      'SAWONET member organization contributing to resilience, environmental conservation, sustainable livelihoods, and community empowerment for vulnerable communities.',
+    focusAreas: [
+      'Climate resilience',
+      'Environmental conservation',
+      'Sustainable livelihoods',
+      'Community empowerment',
+    ],
+    profileStatus: 'Profile resource pending',
+    latestActivity: {
+      title: 'Tree Distribution to Vulnerable Agricultural Communities',
+      location: 'Berjiroon Village, Baidoa, South West State, Somalia',
+      date: 'May 2026',
+      beneficiaries: '100 vulnerable agricultural households',
+      summary:
+        'In May 2026, RISE conducted a tree distribution activity in Berjiroon Village, Baidoa, targeting vulnerable agricultural households. The initiative aimed to strengthen environmental conservation, improve climate resilience, and support sustainable livelihoods through agroforestry practices.',
+      details:
+        'The distributed tree seedlings included fruit and shade trees suitable for the local environment. Community members received guidance on proper planting and care to maximize tree survival and long-term benefits. The activity encouraged farmers to integrate trees into their agricultural land to improve soil quality, reduce land degradation, and enhance household food security.',
+      impactHighlights: [
+        'Increased access to tree seedlings for vulnerable farming households',
+        'Enhanced awareness of environmental conservation and tree planting',
+        'Improved soil fertility, reduced erosion, and better land management',
+        'Strengthened climate resilience through vegetation cover',
+        'Supported future household livelihoods through fruit, shade, and tree-based resources',
+        'Encouraged community ownership and environmental protection',
+      ],
+      images: riseTreeDistributionImages,
+    },
+  },
   pendingMember('rasmi-wash', 'RASMI WASH'),
   pendingMember('somali-central-aid-women', 'Somali Central Aid Women'),
   pendingMember('slac', 'SLAC'),
