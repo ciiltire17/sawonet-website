@@ -22,10 +22,10 @@ const riseTreeDistributionImages = Array.from({ length: 19 }, (_, index) => {
     src: `/assets/members/rise-tree-distribution/rise-tree-distribution-${imageNumber}.jpg`,
     alt:
       index < 4
-        ? 'RISE staff and community members planting tree seedlings in agricultural land in Berjiroon Village, Baidoa'
+        ? 'RISE staff and community members planting tree seedlings on agro-pastoral land in Berjiroon Village, Baidoa'
         : index < 9
           ? 'RISE team members photographed during the tree distribution activity in Baidoa'
-          : 'RISE team members supporting agroforestry and field activities with vulnerable agricultural households in Baidoa',
+          : 'RISE team members supporting agroforestry and field activities with vulnerable agro-pastoral households in Baidoa',
   };
 });
 
@@ -74,16 +74,16 @@ export const memberNgos = [
     ],
     profileStatus: 'Profile resource pending',
     latestActivity: {
-      title: 'Tree Distribution to Vulnerable Agricultural Communities',
+      title: 'Tree Distribution Initiative for Agro-Pastoral Communities',
       location: 'Berjiroon Village, Baidoa, South West State, Somalia',
       date: 'May 2026',
-      beneficiaries: '100 vulnerable agricultural households',
+      beneficiaries: '100 agro-pastoral households',
       summary:
-        'In May 2026, RISE conducted a tree distribution activity in Berjiroon Village, Baidoa, targeting vulnerable agricultural households. The initiative aimed to strengthen environmental conservation, improve climate resilience, and support sustainable livelihoods through agroforestry practices.',
+        'In May 2026, RISE conducted a tree distribution initiative in Berjiroon Village, Baidoa, targeting vulnerable agro-pastoral households. The initiative aimed to strengthen environmental conservation, improve climate resilience, and support sustainable livelihoods through agroforestry practices.',
       details:
-        'The distributed tree seedlings included fruit and shade trees suitable for the local environment. Community members received guidance on proper planting and care to maximize tree survival and long-term benefits. The activity encouraged farmers to integrate trees into their agricultural land to improve soil quality, reduce land degradation, and enhance household food security.',
+        'The distributed tree seedlings included fruit and shade trees suitable for the local environment. Community members received guidance on proper planting and care to maximize tree survival and long-term benefits. The activity encouraged agro-pastoral households to integrate trees into their land use practices to improve soil quality, reduce land degradation, and enhance household food security.',
       impactHighlights: [
-        'Increased access to tree seedlings for vulnerable farming households',
+        'Increased access to tree seedlings for vulnerable agro-pastoral households',
         'Enhanced awareness of environmental conservation and tree planting',
         'Improved soil fertility, reduced erosion, and better land management',
         'Strengthened climate resilience through vegetation cover',
