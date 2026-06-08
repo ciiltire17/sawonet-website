@@ -20,6 +20,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-slate-300">
               <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/about">About</Link></li>
               <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/what-we-do">What We Do</Link></li>
+              <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/membership">Membership</Link></li>
               <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/projects">Projects / Campaigns</Link></li>
               <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/partners">Partners</Link></li>
             </ul>

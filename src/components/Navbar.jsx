@@ -8,6 +8,7 @@ const links = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'What We Do', to: '/what-we-do' },
+  { label: 'Membership', to: '/membership' },
   { label: 'Member NGOs', to: '/member-ngos' },
   { label: 'Projects / Campaigns', to: '/projects' },
   { label: 'Partners', to: '/partners' },

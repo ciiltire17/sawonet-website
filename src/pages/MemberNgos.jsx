@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 import { memberNgos } from '../data/memberNgos.js';
 import { organization, workingGroups } from '../data/sawonet.js';
+import { Link } from '../router.jsx';
 
 function MemberLogo({ ngo }) {
   if (ngo.logo) {
@@ -162,7 +163,14 @@ function MemberCard({ ngo, featured = false }) {
       {ngo.latestActivity && <LatestActivity activity={ngo.latestActivity} />}
 
       <div className="mt-6 border-t border-slate-100 pt-5">
-        {ngo.profileUrl ? (
+        {ngo.profilePath ? (
+          <Link
+            className="inline-flex items-center gap-2 font-semibold text-sawonet-green transition hover:text-sawonet-navy"
+            to={ngo.profilePath}
+          >
+            View Profile <Icon name="arrowRight" size={16} />
+          </Link>
+        ) : ngo.profileUrl ? (
           <a
             href={ngo.profileUrl}
             className="inline-flex items-center gap-2 font-semibold text-sawonet-green transition hover:text-sawonet-navy"
@@ -189,7 +197,7 @@ export default function MemberNgos() {
     <>
       <PageHero
         eyebrow="Member NGOs"
-        title="19 women-led and women-serving organizations"
+        title={`${memberNgos.length} women-led and women-serving organizations`}
         description="SAWONET members represent diverse pastoralist and marginalized communities across Somalia's federal states and regions."
         image
       />

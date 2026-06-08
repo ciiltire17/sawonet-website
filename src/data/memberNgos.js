@@ -93,6 +93,44 @@ export const memberNgos = [
       images: riseTreeDistributionImages,
     },
   },
+  {
+    id: 'apedo',
+    shortName: 'APEDO',
+    name: 'Action for Peace Education and Development Organization',
+    role: 'Member Organization',
+    region: 'South Central Somalia',
+    logo: '/assets/members/apedo-logo.svg',
+    logoAlt: 'Action for Peace Education and Development Organization placeholder logo',
+    tagline: 'Resilience Through Peace, Knowledge, and Development.',
+    founded: '2020',
+    headquarters: 'Mogadishu, Somalia',
+    coverage:
+      'South Central Somalia, including Mogadishu, Bardhere, Jowhar, and surrounding districts.',
+    description:
+      'Action for Peace Education and Development Organization (APEDO) is a Somali-led non-profit organization dedicated to advancing peace, inclusive education, and sustainable community development across Somalia. Established in 2020, APEDO addresses the root causes of conflict and vulnerability through education, peacebuilding, WASH, livelihoods support, humanitarian response, and human rights advocacy.',
+    mission:
+      'To promote peace and social cohesion, expand access to quality and inclusive education, and implement community-driven development initiatives that strengthen resilience, improve livelihoods, and address the underlying drivers of conflict and vulnerability.',
+    vision:
+      'A peaceful, resilient, and inclusive Somalia where communities thrive through education, equity, and sustainable development.',
+    focusAreas: [
+      'Education & Skills Development',
+      'WASH',
+      'Health & Nutrition',
+      'Livelihoods & Food Security',
+      'Peacebuilding & Conflict Resolution',
+      'Human Rights & Advocacy',
+      'Emergency Response & Rehabilitation',
+    ],
+    registration: ['MoIFAR/NGOD/1118', 'C/R No. 26567094'],
+    contact: {
+      phone: '+252 61 4666767',
+      email: 'apedo.org20@gmail.com',
+      location: 'Mogadishu, Somalia',
+    },
+    profilePath: '/member-ngos/apedo',
+    profileSource:
+      'APEDO_Organizational_Profile.pdf; Organization_Mapping_last Updated.docx; SAWONET-Guide_Questionnaire APEDO.docx',
+  },
   pendingMember('rasmi-wash', 'RASMI WASH'),
   pendingMember('somali-central-aid-women', 'Somali Central Aid Women'),
   pendingMember('slac', 'SLAC'),
