@@ -139,5 +139,4 @@ export const memberNgos = [
   pendingMember('saye', 'SAYE'),
   pendingMember('yoda', 'YODA'),
   pendingMember('smwc', 'SMWC'),
-  pendingMember('waro', 'WARO'),
 ];

@@ -26,7 +26,7 @@ export const organization = {
 };
 
 export const impactStats = [
-  { value: '20', label: 'member organizations' },
+  { value: '19', label: 'member organizations' },
   { value: '8', label: 'coverage areas across Somalia' },
   { value: '7', label: 'thematic areas' },
   { value: '5', label: 'thematic working groups' },
