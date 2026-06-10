@@ -20,8 +20,6 @@ const CONTRIBUTION_AREAS = [
   'Other',
 ];
 
-const DEFAULT_FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@sawonet.org';
-
 function isEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value || '');
 }
@@ -219,34 +217,6 @@ async function sendFormspreeEmail({ application, endpoint, message, subject }) {
   return true;
 }
 
-async function sendFormSubmitEmail({ application, message, subject }) {
-  const response = await fetch(DEFAULT_FORM_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      _subject: subject,
-      _template: 'table',
-      _captcha: 'false',
-      _replyto: application.email,
-      name: application.fullName,
-      email: application.email,
-      phone: application.phone,
-      message,
-    }),
-  });
-
-  const responseText = await response.text().catch(() => '');
-
-  if (!response.ok) {
-    throw new Error(`FormSubmit failed with status ${response.status}: ${responseText}`);
-  }
-
-  return true;
-}
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -271,10 +241,7 @@ export default async function handler(req, res) {
       'Thank you for your interest in joining the Somali Pastoralist Women Network (SAWONET). We have received your application and our team will review it shortly.';
 
     const emailConfigured =
-      Boolean(emailWebhookUrl) ||
-      Boolean(formspreeEndpoint) ||
-      Boolean(process.env.RESEND_API_KEY) ||
-      Boolean(DEFAULT_FORM_ENDPOINT);
+      Boolean(emailWebhookUrl) || Boolean(formspreeEndpoint) || Boolean(process.env.RESEND_API_KEY);
 
     if (!emailConfigured) {
       return res.status(503).json({
@@ -320,16 +287,6 @@ export default async function handler(req, res) {
         subject: adminSubject,
       })
     );
-
-    if (!emailWebhookUrl && !formspreeEndpoint && !process.env.RESEND_API_KEY) {
-      emailTasks.push(
-        sendFormSubmitEmail({
-          application,
-          message: adminText,
-          subject: adminSubject,
-        })
-      );
-    }
 
     const emailResults = await Promise.all(emailTasks);
     const delivered = emailResults.some(Boolean);
