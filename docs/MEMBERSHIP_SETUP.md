@@ -7,7 +7,7 @@ The membership page posts to `/api/membership`. Configure at least one backend i
 - `RESEND_API_KEY`: Optional server-side email delivery. Also set `RESEND_FROM` to a verified sender.
 - `MEMBERSHIP_TO_EMAIL`: Defaults to `info@sawonet.org`.
 
-Email delivery is required for a successful submission. Google Sheets storage is optional and does not count as successful email delivery by itself.
+Email delivery is required for a successful submission. Google Sheets storage is optional and does not count as successful email delivery by itself. If no Vercel email provider is configured, the API falls back to FormSubmit delivery to `info@sawonet.org`; the first FormSubmit message may require activation from the `info@sawonet.org` inbox.
 
 ## Formspree Email Delivery
 
