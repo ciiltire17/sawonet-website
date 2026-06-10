@@ -106,29 +106,32 @@ function formatEmailBody(application) {
   return [
     `Timestamp: ${application.timestamp}`,
     `Full Name: ${application.fullName}`,
-    `Email: ${application.email}`,
-    `Phone: ${application.phone}`,
-    `Country: ${application.country}`,
+    `Email Address: ${application.email}`,
+    `Phone Number: ${application.phone}`,
+    `Country of Residence: ${application.country}`,
     `Region / State: ${application.region || 'Not provided'}`,
-    `Organization: ${application.organization || 'Not provided'}`,
+    `Organization Name: ${application.organization || 'Not provided'}`,
     `Position / Title: ${application.position || 'Not provided'}`,
     `Membership Category: ${application.membershipCategory}`,
-    `Applying for Organization: ${application.applyingForOrganization}`,
+    `Applying on behalf of organization: ${application.applyingForOrganization}`,
     `Organization Type: ${application.organizationType || 'Not applicable'}`,
-    `Contribution Areas: ${contributionAreas}`,
     '',
     'Experience:',
     application.experience,
     '',
-    'Motivation:',
+    'Reason for joining:',
     application.motivation,
     '',
+    `Contribution Areas: ${contributionAreas}`,
+    '',
     'Acknowledgements:',
-    `Annual fee: ${application.feeAcknowledged ? 'Yes' : 'No'}`,
-    `Governance: ${application.governanceAcknowledged ? 'Yes' : 'No'}`,
-    `Accurate information: ${application.accurateInformation ? 'Yes' : 'No'}`,
-    `Supports vision and mission: ${application.supportsVision ? 'Yes' : 'No'}`,
-    `Agrees to constitution and policies: ${application.agreesPolicies ? 'Yes' : 'No'}`,
+    `Membership fee acknowledgement: ${application.feeAcknowledged ? 'Yes' : 'No'}`,
+    `Governance acknowledgement: ${application.governanceAcknowledged ? 'Yes' : 'No'}`,
+    '',
+    'Declaration confirmations:',
+    `Information provided is accurate: ${application.accurateInformation ? 'Yes' : 'No'}`,
+    `Supports SAWONET vision and mission: ${application.supportsVision ? 'Yes' : 'No'}`,
+    `Agrees to follow the Network constitution and policies: ${application.agreesPolicies ? 'Yes' : 'No'}`,
   ].join('\n');
 }
 
@@ -169,6 +172,50 @@ async function sendResendEmail({ to, subject, text, replyTo }) {
   return true;
 }
 
+async function sendFormspreeEmail({ application, endpoint, message, subject }) {
+  if (!endpoint) return false;
+
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      _subject: subject,
+      subject,
+      name: application.fullName,
+      email: application.email,
+      phone: application.phone,
+      message,
+      fullName: application.fullName,
+      country: application.country,
+      region: application.region,
+      organization: application.organization,
+      position: application.position,
+      membershipCategory: application.membershipCategory,
+      applyingForOrganization: application.applyingForOrganization,
+      organizationType: application.organizationType,
+      experience: application.experience,
+      motivation: application.motivation,
+      contributionAreas: application.contributionAreas.join(', '),
+      otherContribution: application.otherContribution,
+      feeAcknowledged: application.feeAcknowledged ? 'Yes' : 'No',
+      governanceAcknowledged: application.governanceAcknowledged ? 'Yes' : 'No',
+      accurateInformation: application.accurateInformation ? 'Yes' : 'No',
+      supportsVision: application.supportsVision ? 'Yes' : 'No',
+      agreesPolicies: application.agreesPolicies ? 'Yes' : 'No',
+    }),
+  });
+
+  if (!response.ok) {
+    const responseText = await response.text().catch(() => '');
+    throw new Error(`Formspree failed with status ${response.status}: ${responseText}`);
+  }
+
+  return true;
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -185,30 +232,32 @@ export default async function handler(req, res) {
 
     const googleWebhookUrl = process.env.MEMBERSHIP_SHEETS_WEBHOOK_URL;
     const emailWebhookUrl = process.env.MEMBERSHIP_EMAIL_WEBHOOK_URL;
+    const formspreeEndpoint = process.env.MEMBERSHIP_FORMSPREE_ENDPOINT;
     const adminEmail = process.env.MEMBERSHIP_TO_EMAIL || 'info@sawonet.org';
-    const adminSubject = `New Membership Application - ${application.fullName}`;
+    const adminSubject = `New SAWONET Membership Application - ${application.fullName}`;
     const adminText = formatEmailBody(application);
     const applicantText =
       'Thank you for your interest in joining the Somali Pastoralist Women Network (SAWONET). We have received your application and our team will review it shortly.';
 
-    const configured =
-      Boolean(googleWebhookUrl) || Boolean(emailWebhookUrl) || Boolean(process.env.RESEND_API_KEY);
+    const emailConfigured =
+      Boolean(emailWebhookUrl) || Boolean(formspreeEndpoint) || Boolean(process.env.RESEND_API_KEY);
 
-    if (!configured) {
+    if (!emailConfigured) {
       return res.status(503).json({
         error:
-          'Membership submission integrations are not configured. Add MEMBERSHIP_SHEETS_WEBHOOK_URL or RESEND_API_KEY.',
+          'Membership email delivery is not configured. Add MEMBERSHIP_FORMSPREE_ENDPOINT, MEMBERSHIP_EMAIL_WEBHOOK_URL, or RESEND_API_KEY in Vercel.',
       });
     }
 
-    const tasks = [];
+    const storageTasks = [];
+    const emailTasks = [];
 
     if (googleWebhookUrl) {
-      tasks.push(postJson(googleWebhookUrl, application));
+      storageTasks.push(postJson(googleWebhookUrl, application));
     }
 
     if (emailWebhookUrl) {
-      tasks.push(
+      emailTasks.push(
         postJson(emailWebhookUrl, {
           ...application,
           to: adminEmail,
@@ -220,7 +269,7 @@ export default async function handler(req, res) {
       );
     }
 
-    tasks.push(
+    emailTasks.push(
       sendResendEmail({
         to: adminEmail,
         subject: adminSubject,
@@ -229,16 +278,31 @@ export default async function handler(req, res) {
       })
     );
 
-    tasks.push(
+    emailTasks.push(
+      sendFormspreeEmail({
+        application,
+        endpoint: formspreeEndpoint,
+        message: adminText,
+        subject: adminSubject,
+      })
+    );
+
+    const emailResults = await Promise.all(emailTasks);
+    const delivered = emailResults.some(Boolean);
+
+    if (!delivered) {
+      throw new Error('No configured membership email provider delivered the application.');
+    }
+
+    await Promise.all([
+      ...storageTasks,
       sendResendEmail({
         to: application.email,
         subject: 'Thank You for Applying to Join SAWONET',
         text: applicantText,
         replyTo: adminEmail,
       })
-    );
-
-    await Promise.all(tasks);
+    ]);
 
     return res.status(200).json({ ok: true });
   } catch (error) {

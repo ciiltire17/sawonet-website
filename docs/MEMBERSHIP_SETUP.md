@@ -2,9 +2,26 @@
 
 The membership page posts to `/api/membership`. Configure at least one backend integration in Vercel:
 
+- `MEMBERSHIP_FORMSPREE_ENDPOINT`: Dedicated Formspree endpoint for membership applications. In the Formspree dashboard, set the recipient to `info@sawonet.org` and verify that receiving email address.
 - `MEMBERSHIP_SHEETS_WEBHOOK_URL`: Google Apps Script web app URL. Recommended because it can append to Google Sheets and send both emails.
 - `RESEND_API_KEY`: Optional server-side email delivery. Also set `RESEND_FROM` to a verified sender.
 - `MEMBERSHIP_TO_EMAIL`: Defaults to `info@sawonet.org`.
+
+Email delivery is required for a successful submission. Google Sheets storage is optional and does not count as successful email delivery by itself.
+
+## Formspree Email Delivery
+
+Create a separate Formspree form for SAWONET membership applications. The form recipient must be `info@sawonet.org`, and `info@sawonet.org` must be verified in Formspree before production testing.
+
+Add the endpoint URL to Vercel:
+
+`MEMBERSHIP_FORMSPREE_ENDPOINT=https://formspree.io/f/YOUR_FORM_ID`
+
+The API sends the subject:
+
+`New SAWONET Membership Application - [Full Name]`
+
+The submitted payload includes applicant information, organization information, experience, reason for joining, contribution areas, membership fee acknowledgement, governance acknowledgement, and declaration confirmations.
 
 ## Google Sheets + Email Apps Script
 

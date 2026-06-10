@@ -83,6 +83,16 @@ const inputClass =
 
 const fieldLabelClass = 'grid gap-2 text-sm font-medium text-slate-700';
 
+function parseSubmissionResponse(responseText) {
+  if (!responseText) return {};
+
+  try {
+    return JSON.parse(responseText);
+  } catch {
+    return { error: responseText };
+  }
+}
+
 function TextInput({ label, name, value, onChange, required = false, type = 'text', ...props }) {
   return (
     <label className={fieldLabelClass}>
@@ -182,14 +192,23 @@ export default function Membership() {
         body: JSON.stringify(form),
       });
 
+      const responseText = await response.text();
+      const data = parseSubmissionResponse(responseText);
+
       if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data.error || 'Unable to submit application right now.');
+        console.error('Membership application server error:', {
+          status: response.status,
+          response: data,
+        });
+        throw new Error(
+          data.error || `Unable to submit application right now. Server returned ${response.status}.`
+        );
       }
 
       setForm(initialForm);
       setStatus('success');
     } catch (submissionError) {
+      console.error('Membership application submission failed:', submissionError);
       setError(submissionError.message);
       setStatus('error');
     }
