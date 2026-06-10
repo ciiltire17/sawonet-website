@@ -166,7 +166,8 @@ async function sendResendEmail({ to, subject, text, replyTo }) {
   });
 
   if (!response.ok) {
-    throw new Error(`Resend failed with status ${response.status}`);
+    const responseText = await response.text().catch(() => '');
+    throw new Error(`Resend failed with status ${response.status}: ${responseText}`);
   }
 
   return true;
@@ -308,7 +309,7 @@ export default async function handler(req, res) {
   } catch (error) {
     return res.status(500).json({
       error: 'Unable to submit application right now. Please try again later.',
-      detail: process.env.NODE_ENV === 'development' ? error.message : undefined,
+      detail: error.message,
     });
   }
 }
