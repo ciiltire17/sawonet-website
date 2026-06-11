@@ -1,3 +1,5 @@
+import nodemailer from 'nodemailer';
+
 const REQUIRED_FIELDS = [
   'fullName',
   'email',
@@ -147,74 +149,36 @@ async function postJson(url, payload) {
   }
 }
 
-async function sendResendEmail({ to, subject, text, replyTo }) {
-  if (!process.env.RESEND_API_KEY) return false;
+function createZohoTransporter() {
+  const user = process.env.ZOHO_SMTP_USER;
+  const pass = process.env.ZOHO_APP_PASSWORD;
 
-  const response = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: process.env.RESEND_FROM || 'SAWONET <onboarding@resend.dev>',
-      to,
-      subject,
-      text,
-      reply_to: replyTo,
-    }),
-  });
-
-  if (!response.ok) {
-    const responseText = await response.text().catch(() => '');
-    throw new Error(`Resend failed with status ${response.status}: ${responseText}`);
+  if (!user || !pass) {
+    throw new Error('Zoho SMTP is not configured. Add ZOHO_SMTP_USER and ZOHO_APP_PASSWORD in Vercel.');
   }
 
-  return true;
+  return nodemailer.createTransport({
+    host: 'smtp.zoho.com',
+    port: 465,
+    secure: true,
+    auth: { user, pass },
+  });
 }
 
-async function sendFormspreeEmail({ application, endpoint, message, subject }) {
-  if (!endpoint) return false;
+async function sendZohoMembershipEmail({ application, subject, text }) {
+  const from = process.env.ZOHO_SMTP_USER;
+  const to = process.env.MEMBERSHIP_RECIPIENT_EMAIL || 'info@sawonet.org';
+  const transporter = createZohoTransporter();
 
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      _subject: subject,
-      subject,
-      name: application.fullName,
-      email: application.email,
-      phone: application.phone,
-      message,
-      fullName: application.fullName,
-      country: application.country,
-      region: application.region,
-      organization: application.organization,
-      position: application.position,
-      membershipCategory: application.membershipCategory,
-      applyingForOrganization: application.applyingForOrganization,
-      organizationType: application.organizationType,
-      experience: application.experience,
-      motivation: application.motivation,
-      contributionAreas: application.contributionAreas.join(', '),
-      otherContribution: application.otherContribution,
-      feeAcknowledged: application.feeAcknowledged ? 'Yes' : 'No',
-      governanceAcknowledged: application.governanceAcknowledged ? 'Yes' : 'No',
-      accurateInformation: application.accurateInformation ? 'Yes' : 'No',
-      supportsVision: application.supportsVision ? 'Yes' : 'No',
-      agreesPolicies: application.agreesPolicies ? 'Yes' : 'No',
-    }),
+  const result = await transporter.sendMail({
+    from: `"SAWONET Membership" <${from}>`,
+    to,
+    replyTo: application.email,
+    subject,
+    text,
   });
 
-  if (!response.ok) {
-    const responseText = await response.text().catch(() => '');
-    throw new Error(`Formspree failed with status ${response.status}: ${responseText}`);
-  }
-
-  return true;
+  return result;
 }
 
 export default async function handler(req, res) {
@@ -232,81 +196,28 @@ export default async function handler(req, res) {
     }
 
     const googleWebhookUrl = process.env.MEMBERSHIP_SHEETS_WEBHOOK_URL;
-    const emailWebhookUrl = process.env.MEMBERSHIP_EMAIL_WEBHOOK_URL;
-    const formspreeEndpoint = process.env.MEMBERSHIP_FORMSPREE_ENDPOINT;
-    const adminEmail = process.env.MEMBERSHIP_TO_EMAIL || 'info@sawonet.org';
     const adminSubject = `New SAWONET Membership Application - ${application.fullName}`;
     const adminText = formatEmailBody(application);
-    const applicantText =
-      'Thank you for your interest in joining the Somali Pastoralist Women Network (SAWONET). We have received your application and our team will review it shortly.';
 
-    const emailConfigured =
-      Boolean(emailWebhookUrl) || Boolean(formspreeEndpoint) || Boolean(process.env.RESEND_API_KEY);
+    const emailResult = await sendZohoMembershipEmail({
+      application,
+      subject: adminSubject,
+      text: adminText,
+    });
 
-    if (!emailConfigured) {
-      return res.status(503).json({
-        error:
-          'Membership email delivery is not configured. Add MEMBERSHIP_FORMSPREE_ENDPOINT, MEMBERSHIP_EMAIL_WEBHOOK_URL, or RESEND_API_KEY in Vercel.',
+    if (!emailResult?.messageId) {
+      throw new Error('Zoho SMTP did not return a message ID for the membership application email.');
+    }
+
+    if (googleWebhookUrl) {
+      postJson(googleWebhookUrl, application).catch((storageError) => {
+        console.error('Membership application storage failed after email delivery:', storageError);
       });
     }
 
-    const storageTasks = [];
-    const emailTasks = [];
-
-    if (googleWebhookUrl) {
-      storageTasks.push(postJson(googleWebhookUrl, application));
-    }
-
-    if (emailWebhookUrl) {
-      emailTasks.push(
-        postJson(emailWebhookUrl, {
-          ...application,
-          to: adminEmail,
-          subject: adminSubject,
-          message: adminText,
-          confirmationSubject: 'Thank You for Applying to Join SAWONET',
-          confirmationMessage: applicantText,
-        })
-      );
-    }
-
-    emailTasks.push(
-      sendResendEmail({
-        to: adminEmail,
-        subject: adminSubject,
-        text: adminText,
-        replyTo: application.email,
-      })
-    );
-
-    emailTasks.push(
-      sendFormspreeEmail({
-        application,
-        endpoint: formspreeEndpoint,
-        message: adminText,
-        subject: adminSubject,
-      })
-    );
-
-    const emailResults = await Promise.all(emailTasks);
-    const delivered = emailResults.some(Boolean);
-
-    if (!delivered) {
-      throw new Error('No configured membership email provider delivered the application.');
-    }
-
-    await Promise.all([
-      ...storageTasks,
-      sendResendEmail({
-        to: application.email,
-        subject: 'Thank You for Applying to Join SAWONET',
-        text: applicantText,
-        replyTo: adminEmail,
-      })
-    ]);
-
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, messageId: emailResult.messageId });
   } catch (error) {
+    console.error('Membership application email delivery failed:', error);
     return res.status(500).json({
       error: 'Unable to submit application right now. Please try again later.',
       detail: error.message,

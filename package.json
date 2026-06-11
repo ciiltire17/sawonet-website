@@ -9,14 +9,15 @@
     "preview": "vite preview --configLoader native"
   },
   "dependencies": {
+    "nodemailer": "^8.0.11",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.4",
-    "vite": "^7.1.10",
-    "tailwindcss": "^3.4.17",
+    "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "autoprefixer": "^10.4.20"
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.1.10"
   }
 }

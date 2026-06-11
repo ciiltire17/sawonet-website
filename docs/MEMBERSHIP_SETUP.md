@@ -1,29 +1,40 @@
 # SAWONET Membership Submission Setup
 
-The membership page posts to `/api/membership`. Configure at least one backend integration in Vercel:
+The membership page posts to `/api/membership`. The API sends each application directly to SAWONET's Zoho Mail inbox using Nodemailer and Zoho SMTP.
 
-- `MEMBERSHIP_FORMSPREE_ENDPOINT`: Dedicated Formspree endpoint for membership applications. In the Formspree dashboard, set the recipient to `info@sawonet.org` and verify that receiving email address.
-- `MEMBERSHIP_SHEETS_WEBHOOK_URL`: Google Apps Script web app URL. Recommended because it can append to Google Sheets and send both emails.
-- `RESEND_API_KEY`: Optional server-side email delivery. Also set `RESEND_FROM` to a verified sender.
-- `MEMBERSHIP_TO_EMAIL`: Defaults to `info@sawonet.org`.
+## Required Vercel Environment Variables
 
-Email delivery is required for a successful submission. Google Sheets storage is optional and does not count as successful email delivery by itself.
+Add these variables in the Vercel project settings for Production, Preview, and Development as needed:
 
-## Formspree Email Delivery
+`ZOHO_SMTP_USER=info@sawonet.org`
 
-Create a separate Formspree form for SAWONET membership applications. The form recipient must be `info@sawonet.org`, and `info@sawonet.org` must be verified in Formspree before production testing.
+`ZOHO_APP_PASSWORD=the Zoho app password`
 
-Add the endpoint URL to Vercel:
+`MEMBERSHIP_RECIPIENT_EMAIL=info@sawonet.org`
 
-`MEMBERSHIP_FORMSPREE_ENDPOINT=https://formspree.io/f/YOUR_FORM_ID`
+Do not hardcode the Zoho app password in the repository. Generate an app password in Zoho Mail and store it only as the `ZOHO_APP_PASSWORD` environment variable.
+
+## Email Delivery
+
+SMTP settings used by `/api/membership`:
+
+- Host: `smtp.zoho.com`
+- Port: `465`
+- Secure: `true`
+- User: `ZOHO_SMTP_USER`
+- Password: `ZOHO_APP_PASSWORD`
 
 The API sends the subject:
 
 `New SAWONET Membership Application - [Full Name]`
 
-The submitted payload includes applicant information, organization information, experience, reason for joining, contribution areas, membership fee acknowledgement, governance acknowledgement, and declaration confirmations.
+The email body includes all submitted membership form fields, including applicant details, organization information, experience, reason for joining, contribution areas, membership fee acknowledgement, governance acknowledgement, and declaration confirmations.
 
-## Google Sheets + Email Apps Script
+The API returns success only after Zoho SMTP returns a sent message ID. If SMTP fails, the browser shows an error and logs details to the console.
+
+## Optional Google Sheets Storage
+
+Email delivery is the source of truth for submission success. Google Sheets storage is optional and runs only after the email is sent.
 
 Create a Google Sheet with these columns:
 
@@ -33,7 +44,6 @@ In Apps Script, deploy this as a web app with access set to "Anyone":
 
 ```js
 const SHEET_NAME = 'Applications';
-const ADMIN_EMAIL = 'info@sawonet.org';
 
 function doPost(e) {
   const data = JSON.parse(e.postData.contents);
@@ -58,23 +68,6 @@ function doPost(e) {
     data.motivation,
     contributionAreas,
   ]);
-
-  const adminBody = Object.entries(data)
-    .map(([key, value]) => `${key}: ${Array.isArray(value) ? value.join(', ') : value}`)
-    .join('\n');
-
-  MailApp.sendEmail({
-    to: ADMIN_EMAIL,
-    subject: `New Membership Application - ${data.fullName}`,
-    body: adminBody,
-    replyTo: data.email,
-  });
-
-  MailApp.sendEmail({
-    to: data.email,
-    subject: 'Thank You for Applying to Join SAWONET',
-    body: 'Thank you for your interest in joining the Somali Pastoralist Women Network (SAWONET). We have received your application and our team will review it shortly.',
-  });
 
   return ContentService
     .createTextOutput(JSON.stringify({ ok: true }))
