@@ -2,7 +2,7 @@ import Card from '../components/Card.jsx';
 import Container from '../components/Container.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
-import { organization, partners } from '../data/sawonet.js';
+import { globalEngagements, organization, partners } from '../data/sawonet.js';
 import { Link } from '../router.jsx';
 
 export default function Partners() {
@@ -41,6 +41,58 @@ export default function Partners() {
                 </p>
                 <h2 className="mt-3 text-2xl font-bold text-sawonet-navy">{partner.name}</h2>
                 <p className="mt-4 leading-7 text-slate-600">{partner.role}</p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-sawonet-green/10 bg-slate-50 py-16 sm:py-20">
+        <Container>
+          <SectionHeader
+            eyebrow="Associated engagements"
+            title="Global Platforms & Strategic Engagements"
+            description="SAWONET participation and engagement with global platforms strengthens the visibility of Somali pastoralist women in regional and international dialogue."
+          />
+          <div className="mt-10 grid gap-6">
+            {globalEngagements.map((engagement) => (
+              <Card
+                key={engagement.name}
+                className="overflow-hidden border-sawonet-green/20 p-0"
+              >
+                <div className="grid items-stretch lg:grid-cols-[0.8fr_1.2fr]">
+                  <a
+                    href={engagement.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex min-h-56 items-center justify-center bg-white px-8 py-10 transition hover:bg-sawonet-mint/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-sawonet-green sm:px-12"
+                    aria-label={`Visit the ${engagement.name} website`}
+                  >
+                    <img
+                      src={engagement.logo}
+                      alt={engagement.logoAlt}
+                      className="h-auto max-h-36 w-full max-w-md object-contain"
+                      height="235"
+                      loading="lazy"
+                      width="608"
+                    />
+                  </a>
+                  <div className="flex flex-col justify-center border-t border-sawonet-green/10 bg-sawonet-mint/60 px-6 py-8 sm:px-10 lg:border-l lg:border-t-0">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-sawonet-gold">
+                      {engagement.label}
+                    </p>
+                    <h2 className="mt-3 text-2xl font-bold text-sawonet-navy sm:text-3xl">
+                      {engagement.name}
+                    </h2>
+                    <p className="mt-4 max-w-3xl leading-8 text-slate-700">
+                      {engagement.description}
+                    </p>
+                    <p className="mt-5 text-sm font-medium leading-6 text-slate-500">
+                      This recognition reflects participation and strategic engagement, not a
+                      funding relationship.
+                    </p>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>

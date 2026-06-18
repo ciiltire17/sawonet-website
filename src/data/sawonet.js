@@ -142,6 +142,18 @@ export const partners = [
   },
 ];
 
+export const globalEngagements = [
+  {
+    name: 'Global Landscapes Forum',
+    logo: '/assets/partners/glf-logo-green-landscape.png',
+    logoAlt: 'Global Landscapes Forum women engagement logo',
+    href: 'https://www.globallandscapesforum.org/',
+    label: 'Platform participation',
+    description:
+      'SAWONET has engaged with GLF Africa and global pastoralist women platforms to amplify the voices of Somali pastoralist women in climate resilience, rangeland stewardship, and women’s leadership discussions.',
+  },
+];
+
 export const glfAfrica2026 = {
   slug: 'glf-africa-2026',
   title: 'SAWONET at GLF Africa 2026',

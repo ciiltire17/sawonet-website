@@ -120,6 +120,22 @@ export default function Projects() {
                 />
               </div>
               <div className="p-6 sm:p-8">
+                <a
+                  href="https://www.globallandscapesforum.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mb-6 inline-flex rounded-lg border border-sawonet-green/15 bg-white px-5 py-4 shadow-sm transition hover:border-sawonet-green/30 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sawonet-green"
+                  aria-label="Visit the Global Landscapes Forum website"
+                >
+                  <img
+                    src="/assets/partners/glf-logo-green-landscape.png"
+                    alt="Global Landscapes Forum women engagement logo"
+                    className="h-auto w-52 max-w-full object-contain sm:w-60"
+                    height="235"
+                    loading="lazy"
+                    width="608"
+                  />
+                </a>
                 <p className="inline-flex rounded-full bg-sawonet-mint px-4 py-2 text-sm font-semibold uppercase tracking-wide text-sawonet-green">
                   GLF Africa 2026 | {glfAfrica2026.dates}
                 </p>
