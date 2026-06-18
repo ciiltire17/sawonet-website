@@ -144,11 +144,11 @@ export const partners = [
 
 export const globalEngagements = [
   {
-    name: 'Global Landscapes Forum',
-    logo: '/assets/partners/glf-logo-green-landscape.png',
+    name: 'GLF Women',
+    logo: '/assets/partners/glf-women-logo.jpeg',
     logoAlt: 'Global Landscapes Forum women engagement logo',
-    href: 'https://www.globallandscapesforum.org/',
-    label: 'Platform participation',
+    href: 'https://www.globallandscapesforum.org/glf-women/',
+    label: 'Global campaign engagement',
     description:
       'SAWONET has engaged with GLF Africa and global pastoralist women platforms to amplify the voices of Somali pastoralist women in climate resilience, rangeland stewardship, and women’s leadership discussions.',
   },

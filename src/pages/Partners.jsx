@@ -71,10 +71,10 @@ export default function Partners() {
                     <img
                       src={engagement.logo}
                       alt={engagement.logoAlt}
-                      className="h-auto max-h-36 w-full max-w-md object-contain"
-                      height="235"
+                      className="h-auto w-full max-w-64 rounded-md object-contain shadow-sm"
+                      height="640"
                       loading="lazy"
-                      width="608"
+                      width="640"
                     />
                   </a>
                   <div className="flex flex-col justify-center border-t border-sawonet-green/10 bg-sawonet-mint/60 px-6 py-8 sm:px-10 lg:border-l lg:border-t-0">
