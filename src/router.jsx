@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 const RouterContext = createContext(null);
 
 function currentPath() {
-  return window.location.pathname || '/';
+  return window.location.pathname.replace(/\/+$/, '') || '/';
 }
 
 function scrollToHash(hash) {
@@ -20,8 +20,8 @@ function scrollToHash(hash) {
   });
 }
 
-export function BrowserRouter({ children }) {
-  const [path, setPath] = useState(currentPath);
+export function BrowserRouter({ children, initialPath }) {
+  const [path, setPath] = useState(() => initialPath ?? currentPath());
 
   useEffect(() => {
     const handlePopState = () => setPath(currentPath());
@@ -69,12 +69,12 @@ export function Link({ to, children, className = '', onClick, ...props }) {
 
 export function NavLink({ to, className, children, ...props }) {
   const { path } = useContext(RouterContext);
-  const isActive = path === to;
+  const isActive = path === to || (to === '/publications' && path.startsWith('/publications/'));
   const resolvedClassName =
     typeof className === 'function' ? className({ isActive }) : className || '';
 
   return (
-    <Link to={to} className={resolvedClassName} {...props}>
+    <Link to={to} className={resolvedClassName} aria-current={isActive ? 'page' : undefined} {...props}>
       {children}
     </Link>
   );
@@ -82,9 +82,13 @@ export function NavLink({ to, className, children, ...props }) {
 
 export function Routes({ children }) {
   const { path } = useContext(RouterContext);
-  const routes = Array.isArray(children) ? children : [children];
+  const routes = (Array.isArray(children) ? children : [children]).flat();
   const match = routes.find((route) => route.props.path === path) || routes[0];
   return match.props.element;
+}
+
+export function usePath() {
+  return useContext(RouterContext).path;
 }
 
 export function Route() {

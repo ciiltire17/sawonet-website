@@ -20,3 +20,21 @@ body {
   background: #16794a;
   color: #ffffff;
 }
+
+@layer components {
+  .publication-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition;
+  }
+}
+
+.publication-card a:focus-visible,
+main a:focus-visible {
+  outline: 3px solid #1F6FAD;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .publication-card { transition: none; }
+  .publication-card:hover { transform: none; }
+}

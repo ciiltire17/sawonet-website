@@ -12,6 +12,7 @@ const links = [
   { label: 'Member NGOs', to: '/member-ngos' },
   { label: 'Projects / Campaigns', to: '/projects' },
   { label: 'Partners', to: '/partners' },
+  { label: 'Publications', to: '/publications' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -33,7 +34,7 @@ export default function Navbar() {
             <BrandLogo size="sm" />
           </Link>
 
-          <div className="hidden items-center gap-1 lg:flex">
+          <div className="hidden items-center gap-1 xl:flex">
             {links.map((link) => (
               <NavLink key={link.to} to={link.to} className={navClass}>
                 {link.label}
@@ -43,7 +44,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-200 text-slate-700 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-200 text-slate-700 xl:hidden"
             aria-controls="mobile-menu"
             aria-expanded={open}
             aria-label="Toggle navigation menu"
@@ -54,7 +55,7 @@ export default function Navbar() {
         </nav>
 
         {open && (
-          <div id="mobile-menu" className="border-t border-slate-200 py-4 lg:hidden">
+          <div id="mobile-menu" className="border-t border-slate-200 py-4 xl:hidden">
             <div className="grid gap-1">
               {links.map((link) => (
                 <NavLink

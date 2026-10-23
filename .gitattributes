@@ -1,0 +1,2 @@
+# Preserve original publication PDFs byte-for-byte across platforms.
+public/assets/publications/**/*.pdf binary

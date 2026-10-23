@@ -23,6 +23,7 @@ export default function Footer() {
               <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/membership">Membership</Link></li>
               <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/projects">Projects / Campaigns</Link></li>
               <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/partners">Partners</Link></li>
+              <li><Link className="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white" to="/publications">Publications</Link></li>
             </ul>
           </div>
           <div>

@@ -9,11 +9,16 @@ import MemberNgos from './pages/MemberNgos.jsx';
 import Partners from './pages/Partners.jsx';
 import Projects from './pages/Projects.jsx';
 import WhatWeDo from './pages/WhatWeDo.jsx';
+import Publications from './pages/Publications.jsx';
+import PublicationDetail from './pages/PublicationDetail.jsx';
+import PublicationSeo from './components/PublicationSeo.jsx';
+import { publications } from './data/publications.js';
 import { Route, Routes } from './router.jsx';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-white text-slate-800">
+      <PublicationSeo />
       <Navbar />
       <main>
         <Routes>
@@ -25,6 +30,8 @@ export default function App() {
           <Route path="/member-ngos/apedo" element={<MemberProfile memberId="apedo" />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/partners" element={<Partners />} />
+          <Route path="/publications" element={<Publications />} />
+          {publications.map((publication) => <Route key={publication.slug} path={publication.path} element={<PublicationDetail publication={publication} />} />)}
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

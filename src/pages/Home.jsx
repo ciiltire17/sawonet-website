@@ -3,6 +3,8 @@ import Card from '../components/Card.jsx';
 import Container from '../components/Container.jsx';
 import Icon from '../components/Icon.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
+import PublicationCard from '../components/PublicationCard.jsx';
+import { publications, publicationSeries } from '../data/publications.js';
 import { memberNgos } from '../data/memberNgos.js';
 import {
   campaigns,
@@ -382,6 +384,22 @@ export default function Home() {
                 <p className="mt-3 leading-7 text-slate-600">{partner.role}</p>
               </Card>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-slate-200 bg-sawonet-mint py-16 sm:py-20" aria-labelledby="latest-publications">
+        <Container>
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-wide text-sawonet-green">Evidence & policy · August 2026</p>
+              <h2 id="latest-publications" className="mt-3 text-3xl font-bold tracking-tight text-sawonet-navy sm:text-4xl">Latest Research & Publications</h2>
+              <p className="mt-4 leading-7 text-slate-600">{publicationSeries}: five briefs on pastoralist women's climate leadership, rights, governance, mobility and education.</p>
+            </div>
+            <Link to="/publications" className="inline-flex min-h-11 shrink-0 items-center font-semibold text-sawonet-green hover:underline">View all publications →</Link>
+          </div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-5">
+            {publications.map((publication) => <PublicationCard key={publication.slug} publication={publication} compact />)}
           </div>
         </Container>
       </section>

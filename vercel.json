@@ -4,6 +4,14 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/publications",
+      "destination": "/publications/index.html"
+    },
+    {
+      "source": "/publications/:slug",
+      "destination": "/publications/:slug/index.html"
+    },
+    {
       "source": "/((?!assets/|robots.txt|sitemap.xml).*)",
       "destination": "/index.html"
     }

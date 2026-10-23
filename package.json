@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --configLoader native",
-    "build": "vite build --configLoader native",
+    "build": "vite build --configLoader native && node scripts/prerender-publications.mjs",
     "preview": "vite preview --configLoader native"
   },
   "dependencies": {
