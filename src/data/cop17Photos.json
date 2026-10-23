@@ -1,0 +1,416 @@
+[
+  {
+    "slug": "conference-venue",
+    "width": 4160,
+    "height": 2340,
+    "variants": [
+      {
+        "file": "conference-venue-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 38932
+      },
+      {
+        "file": "conference-venue-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 127520
+      },
+      {
+        "file": "conference-venue-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 258876
+      }
+    ]
+  },
+  {
+    "slug": "plenary-hall",
+    "width": 1536,
+    "height": 2048,
+    "variants": [
+      {
+        "file": "plenary-hall-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 70274
+      },
+      {
+        "file": "plenary-hall-1280.webp",
+        "width": 1280,
+        "height": 1707,
+        "bytes": 202208
+      },
+      {
+        "file": "plenary-hall-1536.webp",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 252834
+      }
+    ]
+  },
+  {
+    "slug": "conference-panel",
+    "width": 1600,
+    "height": 1201,
+    "variants": [
+      {
+        "file": "conference-panel-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 34910
+      },
+      {
+        "file": "conference-panel-1280.webp",
+        "width": 1280,
+        "height": 961,
+        "bytes": 129094
+      },
+      {
+        "file": "conference-panel-1600.webp",
+        "width": 1600,
+        "height": 1201,
+        "bytes": 195932
+      }
+    ]
+  },
+  {
+    "slug": "rangelands-programme",
+    "width": 1280,
+    "height": 960,
+    "variants": [
+      {
+        "file": "rangelands-programme-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 42218
+      },
+      {
+        "file": "rangelands-programme-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 120862
+      }
+    ]
+  },
+  {
+    "slug": "community-roundtable",
+    "width": 1280,
+    "height": 720,
+    "variants": [
+      {
+        "file": "community-roundtable-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 41440
+      },
+      {
+        "file": "community-roundtable-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 124910
+      }
+    ]
+  },
+  {
+    "slug": "roundtable-exchanges",
+    "width": 4032,
+    "height": 2268,
+    "variants": [
+      {
+        "file": "roundtable-exchanges-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 24316
+      },
+      {
+        "file": "roundtable-exchanges-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 72450
+      },
+      {
+        "file": "roundtable-exchanges-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 133966
+      }
+    ]
+  },
+  {
+    "slug": "meeting-discussion",
+    "width": 1280,
+    "height": 720,
+    "variants": [
+      {
+        "file": "meeting-discussion-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 32730
+      },
+      {
+        "file": "meeting-discussion-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 89548
+      }
+    ]
+  },
+  {
+    "slug": "participants-at-the-table",
+    "width": 4032,
+    "height": 2268,
+    "variants": [
+      {
+        "file": "participants-at-the-table-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 27170
+      },
+      {
+        "file": "participants-at-the-table-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 68500
+      },
+      {
+        "file": "participants-at-the-table-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 128790
+      }
+    ]
+  },
+  {
+    "slug": "conference-group",
+    "width": 1280,
+    "height": 960,
+    "variants": [
+      {
+        "file": "conference-group-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 56164
+      },
+      {
+        "file": "conference-group-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 189270
+      }
+    ]
+  },
+  {
+    "slug": "delegation-photograph",
+    "width": 4160,
+    "height": 2340,
+    "variants": [
+      {
+        "file": "delegation-photograph-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 31020
+      },
+      {
+        "file": "delegation-photograph-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 100880
+      },
+      {
+        "file": "delegation-photograph-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 196278
+      }
+    ]
+  },
+  {
+    "slug": "delegates-at-cop17",
+    "width": 4160,
+    "height": 2340,
+    "variants": [
+      {
+        "file": "delegates-at-cop17-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 28710
+      },
+      {
+        "file": "delegates-at-cop17-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 96136
+      },
+      {
+        "file": "delegates-at-cop17-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 190616
+      }
+    ]
+  },
+  {
+    "slug": "participants-together",
+    "width": 1280,
+    "height": 720,
+    "variants": [
+      {
+        "file": "participants-together-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 37186
+      },
+      {
+        "file": "participants-together-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 88644
+      }
+    ]
+  },
+  {
+    "slug": "informal-exchange",
+    "width": 4160,
+    "height": 2340,
+    "variants": [
+      {
+        "file": "informal-exchange-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 33398
+      },
+      {
+        "file": "informal-exchange-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 107044
+      },
+      {
+        "file": "informal-exchange-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 217304
+      }
+    ]
+  },
+  {
+    "slug": "networking-at-the-venue",
+    "width": 4160,
+    "height": 2340,
+    "variants": [
+      {
+        "file": "networking-at-the-venue-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 53664
+      },
+      {
+        "file": "networking-at-the-venue-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 177960
+      },
+      {
+        "file": "networking-at-the-venue-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 356760
+      }
+    ]
+  },
+  {
+    "slug": "rangeland-stewardship-discussion",
+    "width": 2560,
+    "height": 1920,
+    "variants": [
+      {
+        "file": "rangeland-stewardship-discussion-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 61530
+      },
+      {
+        "file": "rangeland-stewardship-discussion-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 189982
+      },
+      {
+        "file": "rangeland-stewardship-discussion-1920.webp",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 328916
+      }
+    ]
+  },
+  {
+    "slug": "rangelands-session",
+    "width": 2560,
+    "height": 1920,
+    "variants": [
+      {
+        "file": "rangelands-session-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 65490
+      },
+      {
+        "file": "rangelands-session-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 207836
+      },
+      {
+        "file": "rangelands-session-1920.webp",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 342532
+      }
+    ]
+  },
+  {
+    "slug": "youth-and-drought-programme",
+    "width": 720,
+    "height": 1280,
+    "variants": [
+      {
+        "file": "youth-and-drought-programme-640.webp",
+        "width": 640,
+        "height": 1138,
+        "bytes": 104822
+      },
+      {
+        "file": "youth-and-drought-programme-720.webp",
+        "width": 720,
+        "height": 1280,
+        "bytes": 122168
+      }
+    ]
+  },
+  {
+    "slug": "plenary-group-photograph",
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "file": "plenary-group-photograph-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 47730
+      },
+      {
+        "file": "plenary-group-photograph-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 128804
+      },
+      {
+        "file": "plenary-group-photograph-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 175602
+      }
+    ]
+  }
+]

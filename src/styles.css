@@ -33,6 +33,20 @@ main a:focus-visible {
   outline-offset: 4px;
 }
 
+.event-photo-dialog::backdrop {
+  background: rgba(8, 24, 38, 0.86);
+}
+
+main button:focus-visible,
+.event-photo-dialog button:focus-visible {
+  outline: 3px solid #1F6FAD;
+  outline-offset: 4px;
+}
+
+.event-photo-dialog button:focus-visible {
+  outline-color: white;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .publication-card { transition: none; }

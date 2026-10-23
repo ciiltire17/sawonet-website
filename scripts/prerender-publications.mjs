@@ -5,8 +5,9 @@ import { renderToString } from 'react-dom/server';
 import { createServer } from 'vite';
 import { publications } from '../src/data/publications.js';
 import { publicationSeo } from '../src/data/publicationSeo.js';
+import { cop17, cop17Seo } from '../src/data/cop17.js';
 
-// Generate complete, crawlable publication pages with the existing Vite/React tools.
+// Generate complete, crawlable publication and event pages with existing Vite/React tools.
 // This also supplies route-specific metadata to social crawlers without JavaScript.
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom' });
 const escapeHtml = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -16,8 +17,8 @@ try {
     server.ssrLoadModule('/src/router.jsx'),
   ]);
   const template = await readFile(resolve('dist/index.html'), 'utf8');
-  for (const path of ['/publications', ...publications.map((item) => item.path)]) {
-    const metadata = publicationSeo(path);
+  for (const path of ['/publications', ...publications.map((item) => item.path), cop17.path]) {
+    const metadata = cop17Seo(path) || publicationSeo(path);
     const body = renderToString(createElement(BrowserRouter, { initialPath: path }, createElement(App)));
     let html = template
       .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(metadata.title)}</title>`)

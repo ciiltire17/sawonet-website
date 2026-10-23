@@ -1,0 +1,497 @@
+{
+  "archive": "SAWONET at UNCCD COP17, Mongolia.zip",
+  "archiveSha256": "4fec805ca379c4e9e28bf3cb6bd3bde697e20e46e5ef2b51aa5e31ce16c63de6",
+  "originalPhotoCount": 162,
+  "originalVideoCount": 5,
+  "selectedPhotoCount": 18,
+  "photographerCredit": "Not supplied; source credit: SAWONET event archive",
+  "photos": [
+    {
+      "source": "IMG-20261006-WA0052.jpg",
+      "slug": "conference-venue",
+      "sourceSha256": "f39afa38cffe242a0347b6f87c8b695902337eb831a1d92befe4994630fca0f3",
+      "width": 4160,
+      "height": 2340,
+      "variants": [
+        {
+          "file": "conference-venue-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 38932
+        },
+        {
+          "file": "conference-venue-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 127520
+        },
+        {
+          "file": "conference-venue-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 258876
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0017.jpg",
+      "slug": "plenary-hall",
+      "sourceSha256": "7e438d1c45b0009e602129c2184f008c4663e1ad9f6106cff2bbaac03c802b31",
+      "width": 1536,
+      "height": 2048,
+      "variants": [
+        {
+          "file": "plenary-hall-640.webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 70274
+        },
+        {
+          "file": "plenary-hall-1280.webp",
+          "width": 1280,
+          "height": 1707,
+          "bytes": 202208
+        },
+        {
+          "file": "plenary-hall-1536.webp",
+          "width": 1536,
+          "height": 2048,
+          "bytes": 252834
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0258.jpg",
+      "slug": "conference-panel",
+      "sourceSha256": "cf13dbe9f351f1116e1a87f4be3227024cb66ca6cbd6f140fcebbfaa7bad26d1",
+      "width": 1600,
+      "height": 1201,
+      "variants": [
+        {
+          "file": "conference-panel-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 34910
+        },
+        {
+          "file": "conference-panel-1280.webp",
+          "width": 1280,
+          "height": 961,
+          "bytes": 129094
+        },
+        {
+          "file": "conference-panel-1600.webp",
+          "width": 1600,
+          "height": 1201,
+          "bytes": 195932
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0302.jpg",
+      "slug": "rangelands-programme",
+      "sourceSha256": "bd1dfbfb067a0cbea1a200eaf23b1ceb2727c7e345708d03b07fbc56e8f9d3a1",
+      "width": 1280,
+      "height": 960,
+      "variants": [
+        {
+          "file": "rangelands-programme-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 42218
+        },
+        {
+          "file": "rangelands-programme-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 120862
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0307.jpg",
+      "slug": "community-roundtable",
+      "sourceSha256": "c08ab1afc79e62a6557cd68124a707b91eedefa8a5280069458d272dc23fa74a",
+      "width": 1280,
+      "height": 720,
+      "variants": [
+        {
+          "file": "community-roundtable-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 41440
+        },
+        {
+          "file": "community-roundtable-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 124910
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0325.jpg",
+      "slug": "roundtable-exchanges",
+      "sourceSha256": "6b3425e4e222997afc22fa225f8b742954c694fa62527e792b1988f0e009a57b",
+      "width": 4032,
+      "height": 2268,
+      "variants": [
+        {
+          "file": "roundtable-exchanges-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 24316
+        },
+        {
+          "file": "roundtable-exchanges-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 72450
+        },
+        {
+          "file": "roundtable-exchanges-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 133966
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0335.jpg",
+      "slug": "meeting-discussion",
+      "sourceSha256": "8aa4fa9b76ae230ada0bae1b22b02b45f4b46378529addc573d9741e6ca0f7ae",
+      "width": 1280,
+      "height": 720,
+      "variants": [
+        {
+          "file": "meeting-discussion-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 32730
+        },
+        {
+          "file": "meeting-discussion-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 89548
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0309.jpg",
+      "slug": "participants-at-the-table",
+      "sourceSha256": "f7290f2df641a412c34a86dff639901c57b190343ad966b23ded72facadffd09",
+      "width": 4032,
+      "height": 2268,
+      "variants": [
+        {
+          "file": "participants-at-the-table-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 27170
+        },
+        {
+          "file": "participants-at-the-table-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 68500
+        },
+        {
+          "file": "participants-at-the-table-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 128790
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0284.jpg",
+      "slug": "conference-group",
+      "sourceSha256": "bfd574f4470f4128973ab0dcd993d8f1318ac1a2651277366fbba6a2d1c8580f",
+      "width": 1280,
+      "height": 960,
+      "variants": [
+        {
+          "file": "conference-group-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 56164
+        },
+        {
+          "file": "conference-group-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 189270
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0118.jpg",
+      "slug": "delegation-photograph",
+      "sourceSha256": "85337d44c97a466dabf4ef2074aa62936fcc98a78bf61431cc1b99afa0cbaed8",
+      "width": 4160,
+      "height": 2340,
+      "variants": [
+        {
+          "file": "delegation-photograph-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 31020
+        },
+        {
+          "file": "delegation-photograph-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 100880
+        },
+        {
+          "file": "delegation-photograph-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 196278
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0128.jpg",
+      "slug": "delegates-at-cop17",
+      "sourceSha256": "41f74bb986beb8c46a112c1bd90e237eceb733d60d201af9ba7303bcb2828627",
+      "width": 4160,
+      "height": 2340,
+      "variants": [
+        {
+          "file": "delegates-at-cop17-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 28710
+        },
+        {
+          "file": "delegates-at-cop17-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 96136
+        },
+        {
+          "file": "delegates-at-cop17-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 190616
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0366.jpg",
+      "slug": "participants-together",
+      "sourceSha256": "7410a8f821b6b79c58701022f94cd22ba16a7ddcfef0a45cea5380ecdf052f91",
+      "width": 1280,
+      "height": 720,
+      "variants": [
+        {
+          "file": "participants-together-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 37186
+        },
+        {
+          "file": "participants-together-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 88644
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0364.jpg",
+      "slug": "informal-exchange",
+      "sourceSha256": "89965750300e4ab77405b983a2256fde66373c6caa0364de615bf109c0ff7180",
+      "width": 4160,
+      "height": 2340,
+      "variants": [
+        {
+          "file": "informal-exchange-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 33398
+        },
+        {
+          "file": "informal-exchange-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 107044
+        },
+        {
+          "file": "informal-exchange-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 217304
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0344.jpg",
+      "slug": "networking-at-the-venue",
+      "sourceSha256": "5e01e11d3a0579d66acc358a5e15c5ecc24c23b0796a093f7479e7ac451e2b5b",
+      "width": 4160,
+      "height": 2340,
+      "variants": [
+        {
+          "file": "networking-at-the-venue-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 53664
+        },
+        {
+          "file": "networking-at-the-venue-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 177960
+        },
+        {
+          "file": "networking-at-the-venue-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 356760
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0352.jpg",
+      "slug": "rangeland-stewardship-discussion",
+      "sourceSha256": "dfabe488d206e9e38f691c14088525a177389c65a6420a79df2561c8a61f34f4",
+      "width": 2560,
+      "height": 1920,
+      "variants": [
+        {
+          "file": "rangeland-stewardship-discussion-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 61530
+        },
+        {
+          "file": "rangeland-stewardship-discussion-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 189982
+        },
+        {
+          "file": "rangeland-stewardship-discussion-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "bytes": 328916
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0358.jpg",
+      "slug": "rangelands-session",
+      "sourceSha256": "f970786bf50ad87a01838e7930c196573c3beb846997f9c8f2eb1d462a9fbdb6",
+      "width": 2560,
+      "height": 1920,
+      "variants": [
+        {
+          "file": "rangelands-session-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 65490
+        },
+        {
+          "file": "rangelands-session-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 207836
+        },
+        {
+          "file": "rangelands-session-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "bytes": 342532
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0259.jpg",
+      "slug": "youth-and-drought-programme",
+      "sourceSha256": "cd622730a8c7b384c13c2356aa0b958e657cfdb155e36828ee030215fef6b3c1",
+      "width": 720,
+      "height": 1280,
+      "variants": [
+        {
+          "file": "youth-and-drought-programme-640.webp",
+          "width": 640,
+          "height": 1138,
+          "bytes": 104822
+        },
+        {
+          "file": "youth-and-drought-programme-720.webp",
+          "width": 720,
+          "height": 1280,
+          "bytes": 122168
+        }
+      ]
+    },
+    {
+      "source": "IMG-20261006-WA0296.jpg",
+      "slug": "plenary-group-photograph",
+      "sourceSha256": "7e7cee414dfaa5306cbdcb8e0648174115d3a3c9d2bfae390ccb1f917ca96e3e",
+      "width": 1600,
+      "height": 900,
+      "variants": [
+        {
+          "file": "plenary-group-photograph-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 47730
+        },
+        {
+          "file": "plenary-group-photograph-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 128804
+        },
+        {
+          "file": "plenary-group-photograph-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 175602
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "source": "VID-20261006-WA0036.mp4",
+      "duration": 7.43,
+      "bytes": 1578999,
+      "selected": false,
+      "decision": "Not published. Meeting speech, plenary or informal dialogue; accurate transcripts and speaker attribution were not supplied. Photographs already document these settings."
+    },
+    {
+      "source": "VID-20261006-WA0041.mp4",
+      "duration": 26.33,
+      "bytes": 5522484,
+      "selected": false,
+      "decision": "Not published. Meeting speech, plenary or informal dialogue; accurate transcripts and speaker attribution were not supplied. Photographs already document these settings."
+    },
+    {
+      "source": "VID-20261006-WA0285.mp4",
+      "duration": 17.4,
+      "bytes": 3676693,
+      "selected": true,
+      "decision": "Venue flags: full visual sequence re-encoded to H.264, silent, metadata removed, fast-start MP4. Selected for motion and venue context."
+    },
+    {
+      "source": "VID-20261006-WA0298.mp4",
+      "duration": 196.73,
+      "bytes": 24281091,
+      "selected": false,
+      "decision": "Not published. Meeting speech, plenary or informal dialogue; accurate transcripts and speaker attribution were not supplied. Photographs already document these settings."
+    },
+    {
+      "source": "VID-20261006-WA0370.mp4",
+      "duration": 31.93,
+      "bytes": 7499844,
+      "selected": false,
+      "decision": "Not published. Meeting speech, plenary or informal dialogue; accurate transcripts and speaker attribution were not supplied. Photographs already document these settings."
+    }
+  ]
+}

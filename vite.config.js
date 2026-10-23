@@ -1,8 +1,9 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { publications } from './src/data/publications.js';
+import { cop17 } from './src/data/cop17.js';
 
-const publicationPaths = new Set(['/publications', ...publications.map((item) => item.path)]);
+const publicationPaths = new Set(['/publications', ...publications.map((item) => item.path), cop17.path]);
 
 export default defineConfig(({ command }) => ({
   plugins: [react(), {

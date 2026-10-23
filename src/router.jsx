@@ -69,7 +69,7 @@ export function Link({ to, children, className = '', onClick, ...props }) {
 
 export function NavLink({ to, className, children, ...props }) {
   const { path } = useContext(RouterContext);
-  const isActive = path === to || (to === '/publications' && path.startsWith('/publications/'));
+  const isActive = path === to || (['/publications', '/projects'].includes(to) && path.startsWith(`${to}/`));
   const resolvedClassName =
     typeof className === 'function' ? className({ isActive }) : className || '';
 

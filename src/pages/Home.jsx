@@ -1,5 +1,6 @@
 import BrandLogo from '../components/BrandLogo.jsx';
 import Card from '../components/Card.jsx';
+import Cop17Feature from '../components/Cop17Feature.jsx';
 import Container from '../components/Container.jsx';
 import Icon from '../components/Icon.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
@@ -81,12 +82,16 @@ export default function Home() {
         </Container>
       </section>
 
+      <section className="bg-slate-50 py-12 sm:py-16" aria-label="Latest global engagement: COP17 Mongolia">
+        <Container><Cop17Feature /></Container>
+      </section>
+
       <section className="bg-white py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div>
               <p className="mb-4 inline-flex rounded-full bg-sawonet-sand px-4 py-2 text-sm font-semibold uppercase tracking-wide text-sawonet-green ring-1 ring-sawonet-gold/30">
-                Featured update | {globalGatheringPastoralistWomen.location}
+                Earlier engagement | {globalGatheringPastoralistWomen.location}
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-sawonet-navy sm:text-4xl">
                 {globalGatheringPastoralistWomen.title}

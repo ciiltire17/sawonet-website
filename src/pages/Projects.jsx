@@ -1,4 +1,5 @@
 import Card from '../components/Card.jsx';
+import Cop17Feature from '../components/Cop17Feature.jsx';
 import Container from '../components/Container.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
@@ -10,12 +11,13 @@ export default function Projects() {
       <PageHero
         eyebrow="Projects / Campaigns"
         title="Campaigns and partnerships advancing protection and resilience"
-        description="SAWONET's current priorities include ending early and forced child marriage, strengthening climate adaptation for pastoralist women, and contributing to global rangelands dialogue through GLF Africa 2026 and the Global Gathering of Pastoralist Women."
+        description="SAWONET's current priorities include ending early and forced child marriage, strengthening climate adaptation for pastoralist women, and contributing to global land and rangelands dialogue through UNCCD COP17, GLF Africa 2026 and the Global Gathering of Pastoralist Women."
         image
       />
 
       <section className="py-16 sm:py-20">
         <Container>
+          <section id="unccd-cop17-mongolia" className="mb-10 scroll-mt-24" aria-label="UNCCD COP17 Mongolia"><Cop17Feature /></section>
           <article
             id="global-gathering-pastoralist-women"
             className="mb-10 overflow-hidden rounded-lg border border-sawonet-gold/30 bg-white shadow-soft"

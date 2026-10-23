@@ -4,6 +4,10 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/projects/unccd-cop17-ulaanbaatar-mongolia",
+      "destination": "/projects/unccd-cop17-ulaanbaatar-mongolia/index.html"
+    },
+    {
       "source": "/publications",
       "destination": "/publications/index.html"
     },

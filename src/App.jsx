@@ -10,6 +10,8 @@ import Partners from './pages/Partners.jsx';
 import Projects from './pages/Projects.jsx';
 import WhatWeDo from './pages/WhatWeDo.jsx';
 import Publications from './pages/Publications.jsx';
+import Cop17 from './pages/Cop17.jsx';
+import { cop17 } from './data/cop17.js';
 import PublicationDetail from './pages/PublicationDetail.jsx';
 import PublicationSeo from './components/PublicationSeo.jsx';
 import { publications } from './data/publications.js';
@@ -29,6 +31,7 @@ export default function App() {
           <Route path="/member-ngos" element={<MemberNgos />} />
           <Route path="/member-ngos/apedo" element={<MemberProfile memberId="apedo" />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path={cop17.path} element={<Cop17 />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/publications" element={<Publications />} />
           {publications.map((publication) => <Route key={publication.slug} path={publication.path} element={<PublicationDetail publication={publication} />} />)}
