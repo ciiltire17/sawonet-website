@@ -155,7 +155,7 @@ const briefs = [
   },
 ];
 
-export const publications = briefs.map((brief) => ({
+export const policyBriefs = briefs.map((brief) => ({
   ...brief,
   date: 'August 2026',
   path: `/publications/${brief.slug}`,
@@ -164,3 +164,24 @@ export const publications = briefs.map((brief) => ({
   fileSize: `${(brief.bytes / 1000000).toFixed(1)} MB`,
   citation: `Takaindisa, J.; Noor, F.; Kamunzu, B.; Hassan, Y. (2026). ${brief.title}: ${brief.subtitle}. CGIAR Climate Security, Organization for Pastoral Peace Development (OPPD).`,
 }));
+
+export const cop17Report = {
+  kind: 'report',
+  slug: 'oppd-unccd-cop17-post-session-report',
+  path: '/publications/oppd-unccd-cop17-post-session-report',
+  title: 'OPPD Post-Session Report on Participation in UNCCD COP17',
+  organization: 'Organization for Pastoral Peace and Development (OPPD)',
+  participant: 'Fozia Noor, Executive Director',
+  conference: 'UNCCD COP17, Ulaanbaatar, Mongolia, 17–28 August 2026',
+  summary: 'OPPD’s report on its participation in UNCCD COP17, covering preparatory engagement, conference activities, lessons and follow-up priorities relating to pastoralist communities, rangeland stewardship, drought resilience and inclusive land governance.',
+  pdf: '/assets/publications/2026/oppd-unccd-cop17-post-session-report.pdf',
+  cover: '/assets/publications/2026/oppd-unccd-cop17-post-session-report-cover.webp',
+  coverWidth: 928,
+  coverHeight: 1200,
+  pages: 6,
+  bytes: 202944,
+  fileSize: '203 KB',
+  sha256: '956bbb03a0a8384b31230fa4f19da2448788ea9cbc0ac991dd6977aca2fe3de2',
+};
+
+export const publications = [...policyBriefs, cop17Report];

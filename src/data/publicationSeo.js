@@ -11,7 +11,33 @@ export function publicationSeo(path) {
       url: `${origin}${publication.path}`,
       image: `${origin}${publication.cover}`,
       type: 'article',
-      structuredData: {
+      structuredData: publication.kind === 'report' ? {
+        '@context': 'https://schema.org',
+        '@type': 'Report',
+        '@id': `${origin}${publication.path}#publication`,
+        name: publication.title,
+        headline: publication.title,
+        description: publication.summary,
+        url: `${origin}${publication.path}`,
+        image: `${origin}${publication.cover}`,
+        inLanguage: 'en',
+        numberOfPages: publication.pages,
+        author: { '@type': 'Organization', name: publication.organization },
+        publisher: { '@type': 'Organization', name: publication.organization },
+        about: {
+          '@type': 'Event',
+          name: 'UNCCD COP17',
+          startDate: '2026-08-17',
+          endDate: '2026-08-28',
+          location: { '@type': 'Place', name: 'Ulaanbaatar, Mongolia' },
+        },
+        encoding: {
+          '@type': 'MediaObject',
+          contentUrl: `${origin}${publication.pdf}`,
+          encodingFormat: 'application/pdf',
+          contentSize: `${publication.bytes} bytes`,
+        },
+      } : {
         '@context': 'https://schema.org',
         '@type': 'Report',
         '@id': `${origin}${publication.path}#publication`,
@@ -49,7 +75,7 @@ export function publicationSeo(path) {
   if (path === '/publications') {
     return {
       title: 'Research & Publications | SAWONET',
-      description: 'Explore five August 2026 CGIAR, OPPD & SAWONET policy briefs on pastoralist women, climate adaptation, peacebuilding, governance, inclusive mobility and education.',
+      description: 'Explore five August 2026 CGIAR, OPPD & SAWONET policy briefs and OPPD’s post-session report on participation in UNCCD COP17 in Ulaanbaatar, Mongolia.',
       url: `${origin}/publications`,
       image: `${origin}/assets/sawonet-logo-512.png`,
       type: 'website',

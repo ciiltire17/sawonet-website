@@ -1,9 +1,11 @@
 import Container from '../components/Container.jsx';
 import PublicationCard, { PublicationActions } from '../components/PublicationCard.jsx';
-import { publicationAuthors, publications, publicationSeries, researchCountries } from '../data/publications.js';
+import { publicationAuthors, policyBriefs, publicationSeries, researchCountries } from '../data/publications.js';
+import ReportDetail from './ReportDetail.jsx';
 import { Link } from '../router.jsx';
 
 export default function PublicationDetail({ publication }) {
+  if (publication.kind === 'report') return <ReportDetail publication={publication} />;
   return (
     <>
       <section className="bg-slate-50 py-10 sm:py-16">
@@ -75,7 +77,7 @@ export default function PublicationDetail({ publication }) {
         <Container>
           <h2 id="related-publications" className="text-2xl font-bold text-sawonet-navy">Related publications</h2>
           <p className="mt-3 text-slate-600">Explore the other available briefs in this joint series.</p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">{publications.filter((item) => item.slug !== publication.slug).map((item) => <PublicationCard key={item.slug} publication={item} compact />)}</div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">{policyBriefs.filter((item) => item.slug !== publication.slug).map((item) => <PublicationCard key={item.slug} publication={item} compact />)}</div>
         </Container>
       </section>
     </>

@@ -399,11 +399,11 @@ export default function Home() {
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-wide text-sawonet-green">Evidence & policy · August 2026</p>
               <h2 id="latest-publications" className="mt-3 text-3xl font-bold tracking-tight text-sawonet-navy sm:text-4xl">Latest Research & Publications</h2>
-              <p className="mt-4 leading-7 text-slate-600">{publicationSeries}: five briefs on pastoralist women's climate leadership, rights, governance, mobility and education.</p>
+              <p className="mt-4 leading-7 text-slate-600">{publicationSeries}: five briefs on pastoralist women's climate leadership, rights, governance, mobility and education. Also available: OPPD’s post-session report on participation in UNCCD COP17.</p>
             </div>
             <Link to="/publications" className="inline-flex min-h-11 shrink-0 items-center font-semibold text-sawonet-green hover:underline">View all publications →</Link>
           </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-5">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {publications.map((publication) => <PublicationCard key={publication.slug} publication={publication} compact />)}
           </div>
         </Container>

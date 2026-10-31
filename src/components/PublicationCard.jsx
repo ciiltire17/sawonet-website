@@ -17,20 +17,22 @@ export function PublicationActions({ publication }) {
 
 export default function PublicationCard({ publication, compact = false, headingLevel = 3 }) {
   const Heading = `h${headingLevel}`;
+  const isReport = publication.kind === 'report';
+  const label = isReport ? 'OPPD · Post-session report' : `Brief ${publication.number}`;
   return (
     <Card className={`publication-card flex h-full flex-col !p-0 ${compact ? '' : 'sm:grid sm:grid-cols-[0.8fr_1.2fr]'}`}>
-      <Link to={publication.path} className={`block rounded-t-lg bg-slate-100 p-5 ${compact ? '' : 'sm:rounded-l-lg sm:rounded-tr-none'}`} aria-label={`View Brief ${publication.number}: ${publication.title}`}>
-        <img src={publication.cover} alt={`Original cover of Brief ${publication.number}: ${publication.title}`} width="900" height="1273" loading="lazy" className={`mx-auto h-auto w-full object-contain shadow-md ${compact ? 'max-w-40' : 'max-w-60'}`} />
+      <Link to={publication.path} className={`block rounded-t-lg bg-slate-100 p-5 ${compact ? '' : 'sm:rounded-l-lg sm:rounded-tr-none'}`} aria-label={`View ${publication.title}`}>
+        <img src={publication.cover} alt={`Original cover of ${publication.title}`} width={publication.coverWidth || 900} height={publication.coverHeight || 1273} loading="lazy" className={`mx-auto h-auto w-full object-contain shadow-md ${compact ? 'max-w-40' : 'max-w-60'}`} />
       </Link>
       <div className="flex min-w-0 flex-1 flex-col p-6">
-        <p className="text-xs font-semibold uppercase tracking-wider text-sawonet-green">Brief {publication.number} <span aria-hidden="true">·</span> <time dateTime="2026-08">{publication.date}</time></p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-sawonet-green">{label}{!isReport && <> <span aria-hidden="true">·</span> <time dateTime="2026-08">{publication.date}</time></>}</p>
         <Heading className={`mt-3 font-bold leading-snug text-sawonet-navy ${compact ? 'text-lg' : 'text-xl'}`}>
           <Link to={publication.path} className="hover:text-sawonet-green hover:underline">{publication.title}</Link>
         </Heading>
-        {!compact && <p className="mt-3 text-sm leading-6 text-slate-600">{publicationAuthors.map((author) => author.name).join(', ')}</p>}
+        {(isReport || !compact) && <p className="mt-3 text-sm leading-6 text-slate-600">{isReport ? publication.organization : publicationAuthors.map((author) => author.name).join(', ')}</p>}
         {!compact && <p className="mt-4 text-sm leading-6 text-slate-600">{publication.summary}</p>}
         <div className="mt-auto pt-5">
-          {compact ? <Link to={publication.path} className="inline-flex min-h-11 items-center gap-2 font-semibold text-sawonet-green hover:underline">Explore brief <span aria-hidden="true">→</span></Link> : <>
+          {compact ? <Link to={publication.path} className="inline-flex min-h-11 items-center gap-2 font-semibold text-sawonet-green hover:underline">{isReport ? 'Explore report' : 'Explore brief'} <span aria-hidden="true">→</span></Link> : <>
             <p className="mb-3 text-xs text-slate-500">PDF · {publication.pages} pages · {publication.fileSize}</p>
             <PublicationActions publication={publication} />
           </>}
