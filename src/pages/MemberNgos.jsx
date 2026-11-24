@@ -3,7 +3,7 @@ import Icon from '../components/Icon.jsx';
 import PageHero from '../components/PageHero.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 import { memberNgos } from '../data/memberNgos.js';
-import { organization, workingGroups } from '../data/sawonet.js';
+import { impactStats, organization, workingGroups } from '../data/sawonet.js';
 import { Link } from '../router.jsx';
 
 function MemberLogo({ ngo }) {
@@ -197,7 +197,7 @@ export default function MemberNgos() {
     <>
       <PageHero
         eyebrow="Member NGOs"
-        title={`${memberNgos.length} women-led and women-serving organizations`}
+        title={`${impactStats[0].value} women-led and women-serving organizations`}
         description="SAWONET members represent diverse pastoralist and marginalized communities across Somalia's federal states and regions."
         image
       />

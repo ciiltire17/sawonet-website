@@ -3,7 +3,7 @@ export const organization = {
   name: 'Somali Pastoralist Women Network',
   tagline: 'Unified Voices. Shared Power. Lasting Impact.',
   summary:
-    'SAWONET is a national women-led platform uniting 19 community-rooted organizations across Somalia to advance the rights, leadership, protection, peacebuilding, humanitarian response, climate resilience, and sustainable development of pastoralist women and girls.',
+    'SAWONET is a national women-led platform uniting 21 community-rooted organizations across Somalia to advance the rights, leadership, protection, peacebuilding, humanitarian response, climate resilience, and sustainable development of pastoralist women and girls.',
   vision:
     "Resilient pastoralist communities led by empowered women and girls shaping Somalia's social, economic, and environmental development.",
   mission:
@@ -26,7 +26,7 @@ export const organization = {
 };
 
 export const impactStats = [
-  { value: '19', label: 'member organizations' },
+  { value: '21', label: 'member organizations' },
   { value: '8', label: 'coverage areas across Somalia' },
   { value: '7', label: 'thematic areas' },
   { value: '5', label: 'thematic working groups' },

@@ -356,7 +356,7 @@ export default function Home() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeader
               eyebrow="Members"
-              title={`${memberNgos.length} organizations across Somalia`}
+              title={`${impactStats[0].value} organizations across Somalia`}
               description="SAWONET is governed through a General Assembly, a five-member Steering Committee, and thematic working groups."
             />
             <Link className="font-semibold text-sawonet-blue hover:text-sawonet-navy" to="/member-ngos">
