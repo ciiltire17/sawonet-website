@@ -1,3 +1,4 @@
+import { statementSeo, statement } from '../src/data/statement.js';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { createElement } from 'react';
@@ -17,8 +18,8 @@ try {
     server.ssrLoadModule('/src/router.jsx'),
   ]);
   const template = await readFile(resolve('dist/index.html'), 'utf8');
-  for (const path of ['/publications', ...publications.map((item) => item.path), cop17.path]) {
-    const metadata = cop17Seo(path) || publicationSeo(path);
+  for (const path of ['/publications', ...publications.map((item) => item.path), cop17.path, '/news', statement.path]) {
+    const metadata = statementSeo(path) || cop17Seo(path) || publicationSeo(path);
     const body = renderToString(createElement(BrowserRouter, { initialPath: path }, createElement(App)));
     let html = template
       .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(metadata.title)}</title>`)

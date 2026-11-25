@@ -4,6 +4,14 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/news",
+      "destination": "/news/index.html"
+    },
+    {
+      "source": "/news/sawonet-collective-call-to-action-2026",
+      "destination": "/news/sawonet-collective-call-to-action-2026/index.html"
+    },
+    {
       "source": "/projects/unccd-cop17-ulaanbaatar-mongolia",
       "destination": "/projects/unccd-cop17-ulaanbaatar-mongolia/index.html"
     },

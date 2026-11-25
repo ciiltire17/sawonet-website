@@ -1,3 +1,4 @@
+import { statementSeo } from '../data/statement.js';
 import { useEffect } from 'react';
 import { usePath } from '../router.jsx';
 import { publicationSeo } from '../data/publicationSeo.js';
@@ -6,7 +7,7 @@ import { cop17Seo } from '../data/cop17.js';
 export default function PublicationSeo() {
   const path = usePath();
   useEffect(() => {
-    const metadata = cop17Seo(path) || publicationSeo(path) || {
+    const metadata = statementSeo(path) || cop17Seo(path) || publicationSeo(path) || {
       title: 'SAWONET | Somali Pastoralist Women Network',
       description: "SAWONET advances pastoralist women's leadership, climate justice, land rights, gender equality, peacebuilding, Indigenous knowledge, food security, and rangeland stewardship across Somalia and global platforms including Kathmandu, Nepal.",
       url: `https://www.sawonet.org${path === '/' ? '/' : path}`,

@@ -1,3 +1,4 @@
+import { StatementFeature } from './Statement.jsx';
 import BrandLogo from '../components/BrandLogo.jsx';
 import Card from '../components/Card.jsx';
 import Cop17Feature from '../components/Cop17Feature.jsx';
@@ -81,6 +82,8 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      <section className="bg-white py-12" aria-label="Latest official statement"><Container><StatementFeature /></Container></section>
 
       <section className="bg-slate-50 py-12 sm:py-16" aria-label="Latest global engagement: COP17 Mongolia">
         <Container><Cop17Feature /></Container>

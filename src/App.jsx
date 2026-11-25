@@ -1,3 +1,5 @@
+import Statement from './pages/Statement.jsx';
+import News from './pages/News.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import About from './pages/About.jsx';
@@ -25,6 +27,8 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/sawonet-collective-call-to-action-2026" element={<Statement />} />
           <Route path="/about" element={<About />} />
           <Route path="/what-we-do" element={<WhatWeDo />} />
           <Route path="/membership" element={<Membership />} />

@@ -12,6 +12,7 @@ const links = [
   { label: 'Member NGOs', to: '/member-ngos' },
   { label: 'Projects / Campaigns', to: '/projects' },
   { label: 'Partners', to: '/partners' },
+  { label: 'News & Events', to: '/news' },
   { label: 'Publications', to: '/publications' },
   { label: 'Contact', to: '/contact' },
 ];
